@@ -98,6 +98,18 @@ Vemos que en el archivo \textit{application.xml} hay dos módulos:
 	\item Uno que contiene los EJBs , y en general el servidor.
 	\item En el otro se declara la parte web de la aplicación indicando el \texttt{.war} del cliente , y la dirección en la que será desplegada (\texttt{/P1-ejb-cliente})
  \end{itemize}
+ 
+ Cuando ejecutamos el comando \texttt{jar -tvf} vemos que nos muestra la tabla de contenidos del archivo al que se lo hemos aplicado.
+ 
+ Vamos a explicar el caso del \texttt{.ear} .
+ 
+ Contiene 4 archivos:
+ \begin{itemize}
+ 	\item \textbf{application.xml}, del que ya hemos hablado
+ 	\item \textbf{MANIFEST.MF} , que contiene información sobre la versión de \texttt{ant} usada para la empaquetación.
+ 	\item \textbf{P1-ejb-cliente.war}, que es el cliente empaquetado.
+ 	\item \textbf{P1-ejb.jar} , que es el servidor empaquetado.
+ \end{itemize} 
 \newpage
 \appendix
 \section{Apéncices}
