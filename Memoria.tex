@@ -72,7 +72,7 @@
 \section{Cuestión 1}\textit{\textbf{VisaDAOLocal.java}}
 
 
-En este archivo se especifican los métodos que va a utilizar la interfaz \textit{VisaDAOLocal}.
+En este archivo se especifican los métodos que va a utilizar la interfaz \texttt{VisaDAOLocal}.
 
 
 Vemos que tiene la etiqueta @Local , que significa:
@@ -84,11 +84,20 @@ Vemos que tiene la etiqueta @Local , que significa:
 
 \section{Ejercicio 1}
 
-Para ajustar los métodos a la interfaz hemos quitado la etiqueta de \texttt{synchronize} ya que no se utilizan en los métodos especificados en \textit{VisaDAOLocal}.
+Para ajustar los métodos a la interfaz hemos quitado la etiqueta de \texttt{synchronize} ya que no se utilizan en los métodos especificados en \texttt{VisaDAOLocal}.
 
-También hemos cambiado el retorno del método \texttt{realizaPago}, antes devolvía \textbf{boolean} y ahora devuelve \textbf{PagoBean}
+También hemos cambiado el retorno del método \texttt{getPagos}, antes devolvía \textbf{ArrayList} y ahora devuelve \textbf{PagoBean []} para respetar las declaraciones de \texttt{VisaDAOLocal}.
 
+\section{Ejercicio 2}
+Hemos eliminado de los \textit{servlets} todo lo referente a los \textit{Web Services} (que estaban en los respectivos métodos \texttt{ProcessRequest})ya que ahora hacemos uso del EJB que hace uso de la interfaz \texttt{VisaDAOLocal}.
 
+En \texttt{getPagos} hemos vuelto a cambiar el tipo de retorno para que coincida con la declaración que hay en \texttt{VisaDAOLocal}.
+\section{Cuestión 2}
+Vemos que en el archivo \textit{application.xml} hay dos módulos:
+\begin{itemize}
+	\item Uno que contiene los EJBs , y en general el servidor.
+	\item En el otro se declara la parte web de la aplicación indicando el \texttt{.war} del cliente , y la dirección en la que será desplegada (\texttt{/P1-ejb-cliente})
+ \end{itemize}
 \newpage
 \appendix
 \section{Apéncices}
