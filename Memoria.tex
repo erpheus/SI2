@@ -92,6 +92,9 @@ También hemos cambiado el retorno del método \texttt{getPagos}, antes devolví
 Hemos eliminado de los \textit{servlets} todo lo referente a los \textit{Web Services} (que estaban en los respectivos métodos \texttt{ProcessRequest})ya que ahora hacemos uso del EJB que hace uso de la interfaz \texttt{VisaDAOLocal}.
 
 En \texttt{getPagos} hemos vuelto a cambiar el tipo de retorno para que coincida con la declaración que hay en \texttt{VisaDAOLocal}.
+
+Además hemos borrado otras referencias a los Web Services como el parámetro \texttt{service-url} que habíamos añadido en la práctica anterior en el archivo \texttt{web.xml}.
+
 \section{Cuestión 2}
 Vemos que en el archivo \textit{application.xml} hay dos módulos:
 \begin{itemize}
