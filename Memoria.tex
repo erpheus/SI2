@@ -92,9 +92,6 @@ También hemos cambiado el retorno del método \texttt{getPagos}, antes devolví
 Hemos eliminado de los \textit{servlets} todo lo referente a los \textit{Web Services} (que estaban en los respectivos métodos \texttt{ProcessRequest})ya que ahora hacemos uso del EJB que hace uso de la interfaz \texttt{VisaDAOLocal}.
 
 En \texttt{getPagos} hemos vuelto a cambiar el tipo de retorno para que coincida con la declaración que hay en \texttt{VisaDAOLocal}.
-
-Además hemos borrado otras referencias a los Web Services como el parámetro \texttt{service-url} que habíamos añadido en la práctica anterior en el archivo \texttt{web.xml}.
-
 \section{Cuestión 2}
 Vemos que en el archivo \textit{application.xml} hay dos módulos:
 \begin{itemize}
@@ -113,6 +110,51 @@ Vemos que en el archivo \textit{application.xml} hay dos módulos:
  	\item \textbf{P1-ejb-cliente.war}, que es el cliente empaquetado.
  	\item \textbf{P1-ejb.jar} , que es el servidor empaquetado.
  \end{itemize} 
+ 
+ \section{Ejercicio 3}
+ 
+ \begin{figure}[hbtp]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{}
+ 	\caption{Comprobar en la administración de Glassfish el despliegue de la aplicación}
+ \end{figure}
+ 
+ \section{Ejercicio 5}
+ \begin{itemize}
+ 	\item Modificar \texttt{ TarjetaBean.java}
+ 	
+ 	
+ 	 Además de añadir saldo como atributo hemos añadido los métodos getSaldo y setSaldo.
+ 	 
+ 	 
+ 	 \item Modificar \texttt{ VisaDAOBean.java}
+ 	 
+ 	 
+ 	 Hemos creado las dos consultas y hemos modificado el método \texttt{RealizaPago} para que ejecute las dos consultas anteriores usando los \textit{prepared statements}.
+ 	 
+ 	 Al contrario que las otras consultas que se ejecutan en \texttt{Realizapago} , estas no dan la opción de no usar el \textit{prepared}.
+ 	 
+ 	 
+ 	 Para la parte de lanzar la excepción en caso de que algo falle, hemos un String que explica la razón por la que ha fallado y se los mandamos al cliente junto con la \texttt{EJBException}.
+ 	 
+ 	 \item Modificar \texttt{ProcesaPago}
+ 	 
+ 	 Hemos capturado la excepción con \texttt{try/catch}
+ \end{itemize}
+ 
+ 
+\section{Ejercicio 6}
+	\begin{figure}[htbp]
+		\centering
+		
+		\subfigure[Saldo ANTES del pago]{\includegraphics[width=55mm]{}}
+		\subfigure[Realización del pago]{\includegraphics[width=55mm]{}}\vspace{3mm} \hspace{10mm}
+		\subfigure[Saldo DESPUÉS del pago]{\includegraphics[width=80mm]{}}
+		\caption{Realización de pago y comprobación de saldo}
+	\end{figure}
+ 
+ 
+ 
 \newpage
 \appendix
 \section{Apéncices}
