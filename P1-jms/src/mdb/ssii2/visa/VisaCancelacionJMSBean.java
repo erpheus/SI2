@@ -34,7 +34,7 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
 
   private static final String RECTIFICA_SALDO_QRY =
   "UPDATE tarjeta set saldo = saldo + (SELECT importe FROM pago WHERE idautorizacion = ?) 
-  WHERE numerotarjeta = (SELECT numerotarjeta WHERE idautorizacion = ?";
+  WHERE numerotarjeta = (SELECT numerotarjeta WHERE idautorizacion = ?)";
    // TODO : Definir UPDATE sobre la tabla pagos para poner
    // codRespuesta a 999 dado un código de autorización
 
