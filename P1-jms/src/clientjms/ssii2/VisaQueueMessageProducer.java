@@ -60,7 +60,7 @@ public class VisaQueueMessageProducer {
         Connection connection = null;
         Session session = null;
         MessageProducer messageProducer = null;
-        TextMessage message = null;
+        TextMessage textMessage = null;
 
         if (args.length != 1) {
           System.err.println("Uso: VisaQueueMessageProducer [-browse | <msg>]");
@@ -80,6 +80,12 @@ public class VisaQueueMessageProducer {
             browseMessages(session); 
           } else {
             // TODO: Enviar argv[0] como mensaje de texto
+            messageProducer = session.createProducer(queue);
+            textMessage = session.createTextMessage();
+            textMessage.setText(args[0]);
+            messageProducer.send(textMessage);
+            messageProducer.close();
+            session.close();
           }
         } catch (Exception e) {
             System.out.println("Excepcion : " + e.toString());
