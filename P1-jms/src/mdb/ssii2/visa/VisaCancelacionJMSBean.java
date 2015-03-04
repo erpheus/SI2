@@ -30,7 +30,7 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
   private MessageDrivenContext mdc;
 
   private static final String UPDATE_CANCELA_QRY = 
-  "UPDATE pago set codrespuesta = 999 WHERE idautorizacion = ?";
+  "UPDATE pago set codrespuesta = 999 WHERE idautorizacion = ? AND codrespuesta <> 999";
 
   private static final String RECTIFICA_SALDO_QRY =
   "UPDATE tarjeta set saldo = saldo + (SELECT importe FROM pago WHERE idautorizacion = ?) 
@@ -49,11 +49,30 @@ public class VisaCancelacionJMSBean extends DBTester implements MessageListener 
   // la actualización
   public void onMessage(Message inMessage) {
       TextMessage msg = null;
+      int idAutorizacion;
+      boolean rs = true;
+      PreparedStatement pstmt = null;
 
       try {
           if (inMessage instanceof TextMessage) {
               msg = (TextMessage) inMessage;
               logger.info("MESSAGE BEAN: Message received: " + msg.getText());
+              idAutorizacion = Integer.parseInt(msg.getText());
+               String update_cancela  = UPDATE_CANCELA_QRY;
+               errorLog(update_cancela);
+               pstmt = con.prepareStatement(update_cancela);
+               pstmt.setInt(1, idAutorizacion);
+               rs = pstmt.execute();  
+
+               if(!rs){
+                String rectifica_saldo = RECTIFICA_SALDO_QRY;
+               errorLog(rectifica_saldo);
+               pstmt = con.prepareStatement(rectifica_saldo);
+               pstmt.setInt(1, idAutorizacion);
+               pstmt.setInt(2, idAutorizacion);
+               rs = pstmt.execute();
+               }
+
           } else {
               logger.warning(
                       "Message of wrong type: "
