@@ -180,9 +180,11 @@ private void printAddresses(HttpServletRequest request, HttpServletResponse resp
 	       pago = dao.realizaPago(pago);
             
         } catch (EJBException e) {
-             if (sesion != null) sesion.invalidate();
-              enviaError(e, request, response);
-              return;
+            if (sesion != null) {
+                sesion.invalidate();
+            }
+            enviaError(e, request, response);
+            return;
         }
 	if (pago == null) {      
             enviaError(new Exception("Pago incorrecto"), request, response);

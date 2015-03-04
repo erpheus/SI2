@@ -214,14 +214,14 @@ public class VisaDAOBean extends DBTester implements VisaDAOLocal {
 
 
 
-    public PagoBean realizaPago(PagoBean pago) {
+    public PagoBean realizaPago(PagoBean pago) throws EJBException{
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
         boolean ret = false,
                 no_saldo = false;
-        String codRespuesta = "999",
-               razon_excepcion = ""; // En principio, denegado
+        String codRespuesta = "999", // En principio, denegado
+               razon_excepcion = ""; 
 
         // TODO: Utilizar en funcion de isPrepared()
         PreparedStatement pstmt = null;
@@ -364,7 +364,7 @@ public class VisaDAOBean extends DBTester implements VisaDAOLocal {
                 pago.setIdAutorizacion(null);
                 return null;
             } else {
-                throw new EJBException();
+                throw new EJBException(razon_excepcion);
             }
         }
     }
