@@ -6,10 +6,15 @@
 \usepackage{inconsolata}
 \usepackage{enumitem}
 \usepackage{graphicx}
-\usepackage{subfigure}
+
 \usepackage{listings}
 \usepackage{color}
 \usepackage{appendix}
+\usepackage{mdframed}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \input{../cabecera.tex}
 
@@ -71,7 +76,11 @@
 
 \cabeceraSI{1b}{4/03/2015}
 
-\section{Cuestión 1}\texttt{\textbf{VisaDAOLocal.java}}
+\section{Cuestión 1}
+\begin{mdframed}
+Editar el archivo \texttt{VisaDAOLocal.java} y comprobar la definición de dicha interfaz. Anote sus
+comentarios en la memoria.
+\end{mdframed}
 
 	En este archivo se especifican los métodos que van a poder ser llamados sobre el EJB que implemente la interfaz \texttt{VisaDAOLocal}.
 
@@ -84,12 +93,69 @@
 
 
 \section{Ejercicio 1}
+\begin{mdframed} 
+Introduzca las siguientes modificaciones en el \texttt{bean} \texttt{VisaDAOBean} para convertirlo en un \texttt{EJB}
+\texttt{stateless} con interfaz local:
+\begin{itemize}
+\item Declarar la clase con interfaz local y la anotación Stateless
+\lstset{language=java}
+\begin{lstlisting}
+...
+import javax.ejb.Stateless;
+...
+@Stateless(mappedName="VisaDAOBean")
+public class VisaDAOBean extends DBTester implements VisaDAOLocal {
+...
+\end{lstlisting}
+\item Eliminar el constructor por defecto de la clase
+\item Ajustar los métodos \texttt{getPagos()} / \texttt{realizaPago()} a la interfaz definida en \texttt{VisaDAOLocal}
+\end{itemize}
+\end{mdframed}
 
 	Para ajustar los métodos a la interfaz hemos quitado la etiqueta de \texttt{synchronize} ya que no se utilizan en los métodos especificados en \texttt{VisaDAOLocal}.
 
 	También hemos cambiado el retorno del método \texttt{getPagos}, antes devolvía \texttt{ArrayList} y ahora devuelve \texttt{PagoBean []} para respetar las declaraciones de \texttt{VisaDAOLocal}.
 
 	\section{Ejercicio 2}
+	\begin{mdframed}
+Modificar el servlet \texttt{ProcesaPago} para que acceda al \texttt{EJB} local. Para ello, modificar el archivo
+\texttt{ProcesaPago.java} de la siguiente manera:
+
+En la sección de preproceso, añadir las siguientes importaciones de clases que se van a utilizar:
+
+\lstset{language=java}
+\begin{lstlisting}
+...
+import javax.ejb.EJB;
+import ssii2.visa.VisaDAOLocal;
+...
+\end{lstlisting}
+Se deberán eliminar estas otras importaciones que dejan de existir en el proyecto:
+\begin{lstlisting}
+import ssii2.visa.VisaDAOWSService; // Stub generado automaticamente
+import ssii2.visa.VisaDAOWS; // Stub generado automaticamente
+\end{lstlisting}
+Añadir como atributo de la clase que implementa el servlet el objeto proxy que permite acceder al \texttt{EJB}
+local, con su correspondiente anotación que lo declara como tal:
+\begin{lstlisting}
+...
+@EJB(name="VisaDAOBean", beanInterface=VisaDAOLocal.class)
+private VisaDAOLocal dao;
+...
+\end{lstlisting}
+En el cuerpo del servlet, eliminar la declaración de la instancia del antiguo webservice \\ \texttt{VisaDAOWS}, así
+como el código necesario para obtener la referencia remota
+\begin{lstlisting}
+...
+VisaDAOWS dao = null;
+VisaDAOWSService service = new VisaDAOWSService();
+dao = service.getVisaDAOWSPort()
+\end{lstlisting}
+
+\textbf{Importante:} Esta operación deberá ser realizada para todos los servlets del proyecto que hagan uso del
+antiguo \texttt{VisaDAOWS}. Verifique también posibles errores de compilación y ajustes necesarios en el código
+al cambiar la interfaz del antiguo \texttt{VisaDAOWS} (en particular, el método \texttt{getPagos()}).
+\end{mdframed}
 	Hemos eliminado de los \texttt{servlets} todo lo referente a los \textit{Web Services} (que estaban en los respectivos métodos \texttt{ProcessRequest} del cliente) ya que ahora hacemos uso del EJB que hace uso de la interfaz \texttt{VisaDAOLocal}.
 
 	Entre las cosas que hemos tenido que quitar están los imports del paquete \texttt{javax.xml.ws} y todo el código que obtenía \texttt{VisaDAO} a través de un servicio y le asignaba una dirección de recurso dinámicamente. Por supuesto, tan bien borramos el ya no necesario parámetro de \texttt{web.xml} que especificaba las rutas al servidor.
@@ -97,9 +163,14 @@
 	En \texttt{getPagos} hemos vuelto a cambiar el tipo de retorno para que coincida con la declaración que hay en \texttt{VisaDAOLocal}.
 
 
-\pagebreak
+
 
 \section{Cuestión 2}
+\begin{mdframed}
+ Editar el archivo application.xml y comprobar su contenido. Verifique el contenido de todos los
+archivos \texttt{.jar} / \texttt{.war} / \texttt{.ear} que se han construido hasta el momento (empleando el comando \texttt{jar} \texttt{-tvf}). Anote
+sus comentarios en la memoria.
+\end{mdframed}
 	Vemos que en el archivo \texttt{application.xml} hay dos módulos:
 	\begin{itemize}
 		\item Uno que contiene los EJBs (parte `servidor').
@@ -119,18 +190,35 @@
 
 	 En cambio, al examinar los contenidos de \texttt{P1-ejb-cliente.war}, vimos que a parte de los \texttt{.class} encontrados también existían ficheros de configuración del servicio web, dentro de \texttt{WEB-INF}.
 	
-
+\newpage
  \section{Ejercicio 3}
- 
+ \begin{mdframed}
+Preparar los PCs con el esquema descrito y realizar el despliegue de la aplicación:
+\begin{itemize}
+\item Editar el archivo \texttt{build.properties} para que las propiedades \\ \texttt{as.host.client} y \texttt{as.host.server}
+contengan la dirección IP del servidor de aplicaciones.
+\item Editar el archivo \texttt{postgresql.properties} para la propiedad \\ \texttt{db.client.host} y \texttt{db.host} contengan las
+direcciones IP adecuadas para que el servidor de aplicaciones se conecte al postgresql, ambos
+estando en servidores diferentes.
+\end{itemize}
+
+\noindent Desplegar la aplicación de empresa
+
+\texttt{ant desplegar}
+\end{mdframed}
 	 \begin{figure}[hbtp]
 	 	\centering
 	 	\includegraphics[width=1.1\textwidth]{pantallazos/ejercicio3.png}
 	 	\caption{Comprobar en la administración de Glassfish el despliegue de la aplicación}
 	 \end{figure}
  
-
-
+ \newpage
  \section{Ejercicio 4}
+ \begin{mdframed}
+ Comprobar el correcto funcionamiento de la aplicación mediante llamadas directas a través de
+las páginas \texttt{pago.html} y \texttt{testbd.jsp} (sin \\ \texttt{directconnection}). Realice un pago. Lístelo. Elimínelo. Téngase en
+cuenta que la aplicación se habrá desplegado bajo la ruta \texttt{/P1-ejb-cliente} 
+\end{mdframed}
 
 	 No hubo ningún problema en las pruebas y comprobamos el estado de la base de datos a cada paso para asegurarnos de que funcionaba correctamente.
 
@@ -140,9 +228,49 @@
 	 	\caption{Muestra de un pago realizado a través de EJBs}
 	 \end{figure}
 
-
-
+\newpage
  \section{Ejercicio 5}
+ \begin{mdframed}
+Modificar la aplicación VISA para soportar el campo saldo:
+\vspace{5mm}
+
+\lstset{language=java}
+\noindent Archivo \texttt{TarjetaBean.java}:
+\begin{itemize}
+\item Añadir el atributo saldo y sus métodos de acceso:
+\begin{lstlisting}
+private double saldo;
+\end{lstlisting}
+\end{itemize}
+Archivo \texttt{VisaDAOBean.java}:
+\begin{itemize}
+\item Importar la definición de la excepción \texttt{EJBException} que debe lanzar el servlet para indicar que se
+debe realizar un rollback:
+\begin{lstlisting}
+import javax.ejb.EJBException;
+\end{lstlisting}
+\item Declarar un prepared statement para recuperar el saldo de la tarjeta de la base de datos.
+\item Declarar un prepared statement para insertar el nuevo saldo calculado en la base de datos.
+\item Modificar el método realizaPago con las siguientes acciones:
+\begin{itemize}
+\item Recuperar el saldo de la tarjeta a través del prepared statement declarado anteriormente.
+\item Comprobar si el saldo es mayor o igual que el importe de la operación. Si no lo es, retornar
+denegando el pago (idAutorizacion= null y pago retornado=null)
+\item Si el saldo es suficiente, decrementarlo en el valor del importe del pago y actualizar el registro
+de la tarjeta para reflejar el nuevo saldo mediante el prepared statement declarado
+anteriormente.
+\item Si lo anterior es correcto, ejecutar el proceso de inserción del pago y obtención del
+idAutorizacion, tal como se realizaba en la práctica anterior (este código ya debe estar
+programado y no es necesario modificarlo).
+\item En caso de producirse cualquier error a lo largo del proceso (por ejemplo, si no se obtiene el
+idAutorizacion porque la transacción está duplicada), lanzar una excepción \texttt{EJBException} para
+retornar al cliente.
+\end{itemize}
+\item Modificar el servlet ProcesaPago para que capture la posible interrupción \texttt{EJBException} lanzada por
+realizaPago, y, en caso de que se haya lanzado, devuelva la página de error mediante el método
+enviaError (recordar antes de retornar que se debe invalidar la sesión, si es que existe).
+\end{itemize}
+\end{mdframed}
 	 \begin{itemize}
 	 	\item Archivo \texttt{ TarjetaBean.java}
 	 	
@@ -164,11 +292,20 @@
 	 	 Hemos capturado la excepción con un bloque \texttt{try / catch} que llama a \texttt{enviaError}.
 	 \end{itemize}
  
-\pagebreak
+
  
 
 
 \section{Ejercicio 6}
+\begin{mdframed}
+Desplegar y probar la nueva aplicación creada.
+\begin{itemize}
+\item Probar a realizar pagos correctos. Comprobar que disminuye el saldo de las tarjetas sobre las que
+realice operaciones. Añadir a la memoria las evidencias obtenidas.
+\item Realice una operación con identificador de transacción y de comercio duplicados. Compruebe que el
+saldo de la tarjeta especificada en el pago no se ha variado. 
+\end{itemize}
+\end{mdframed}
 	\begin{figure}[htbp]
 		\centering	
 		\includegraphics[width=1\textwidth]{pantallazos/ejercicio6a.png}
@@ -183,7 +320,12 @@
 
 
 
-\section{Ejercicio7}
+\section{Ejercicio 7}
+\begin{mdframed}
+ En la máquina virtual donde se encuentra el servidor de aplicaciones (10.X.Y.2), declare
+manualmente la factoría de conexiones empleando la consola de administración, tal y como se adjunta en
+la \textbf{Figura 4}. 
+\end{mdframed}
 	Creamos manualmente a través de la interfaz de administración de Glassfish la factoría de mensajes aunque dudamos un poco al no coincidir completamente los nombres de los campos que hay en la captura de pantalla del enunciado con lo que veíamos nosotros. En concreto cambiaba la etiqueta del campo \textit{Pool Name} por \textit{JNDI Name}. Pudimos comprobar en ejercicios posteriores que era lo mismo ya que las referencias funcionaban.
 
 	\begin{figure}[htbp]
@@ -192,15 +334,35 @@
 	\end{figure}
 
 
-\pagebreak
 
-\section{Ejercicio8}
+
+\section{Ejercicio 8}
+\begin{mdframed}
+En la máquina virtual donde se encuentra el servidor de aplicaciones (10.X.Y.2), declare
+manualmente la conexión empleando la consola de administración, tal y como se adjunta en la \textbf{Figura 5}
+\end{mdframed}
 	Realizando tareas similares a las del ejercicio 7 no tuvimos ningún porblema creando la cola de mensajes.
 
 
 
+\newpage
+\section{Ejercicio 9}
+\begin{mdframed}
+\begin{itemize}
+\item Modifique el fichero sun-ejb-jar.xml para que el MDB conecte adecuadamente a su connection factory
+\item Incluya en la clase VisaCancelacionJMSBean:
+\begin{itemize}
+\item Consulta SQL necesaria para actualizar el código de respuesta a valor 999, de aquella
+autorización existente en la tabla de pagos cuyo idAutorizacion coincida con lo recibido por el mensaje.
+\item Consulta SQL necesaria para rectificar el saldo de la tarjeta que realizó el pago
 
-\section{Ejercicio9}
+\item Método onMessage() que implemente ambas actualizaciones. Para ello tome de ejemplo el
+código SQL de ejercicios anteriores, de modo que se use un prepared statement que haga bind
+del idAutorizacion para cada mensaje recibido.
+\end{itemize}
+
+\end{itemize}
+\end{mdframed}
  	\begin{itemize}
 
  		\item Archivo \texttt{sun-ejb-jar.xml}
@@ -225,21 +387,87 @@
  	\end{itemize}
 
 
-\section{Ejercicio10}
+
+\newpage
+\section{Ejercicio 10}
+\begin{mdframed}
+Implemente ambos métodos en el cliente proporcionado. Deje comentado el método de
+acceso por JNDI. Indique en la memoria de prácticas qué ventajas podrían tener uno u otro método.
+\end{mdframed}
  	El método que hemos usado al final, obtención de recursos JMS estáticos, tiene la ventaja de, en algunos casos, ser más eficiente que el método dinámico ya que las anotaciones que declaran que va a tener esa variable en tiempo de ejecución pueden prepararse una vez, cuando se instancie la clase en el sistema al arrancar la aplicación, mientra que la búsqueda dinámica tiene que ser llamada explicitamente, lo cual es su desventaja. En cambio el método dinámico proporciona más flexibilidad al sistema permitiendo que el nombre de la factoría de conexiones o de la cola pueda ser obtenida dinámicamente (de un archivo de configuración, de variables de entorno, de la entrada del usuario, etc...) o incluso cambiada en algún momento, al contrario que el método estático, en el que los nombres de los recursos deben saberse en tiempo de compilación al estar incluidos dentro de una anotación \texttt{@Resource}.
 
 
-\section{Ejercicio11}
+\section{Ejercicio 11}
+\begin{mdframed}
+Automatice la creación de los recursos JMS (cola y connection factory) en el build.xml y jms.xml. Para ello, indique en jms.properties los nombres de ambos y el Physical Destination Name de la
+cola de acuerdo a los valores asignados en los ejercicios 7 y 8. Recuerde también asignar las direcciones IP
+adecuadas a las variables \textbf{as.host.mdb} (build.properties), \textbf{as.host.server} y \textbf{as.host.client} (jms.properties).
+
+Borre desde la consola de administración de Glassfish la \textit{connectionFactory} y la cola creadas manualmente
+y ejecute:
+
+\texttt{cd P1-jms}
+
+\texttt{ant todo}
+
+Comprube en la consola de administración del Glassfish que, efectivamente, los recursos se han creado
+automáticamente. Revise el fichero jms.xml y anote en la memoria de prácticas cuál es el comando
+equivalente para crear una cola JMS usando la herramienta asadmin.
+\end{mdframed}
 
 	No hubo que realizar cambios en ninguno de los archivos \texttt{xml} mencionados ya que ambos importan los archivos de propiedades.
 
 	Todas las direcciones ip que tuvimos que asignar fueron las de la máquina 2 ya que la base de datos permanece intacta y aislada en la 1. Así que cambiamos las variables \texttt{as.host.mdb}, \texttt{as.host.server} y \texttt{as.host.client} a \texttt{10.1.3.2}. 
 
-	Además, en el archivo \texttt{jms.properties} asignamos las variables \texttt{jms.factoryname}, \texttt{jms.name} y \texttt{jms.physname} a los valores \texttt{jms/VisaConnectionFactory}, \texttt{jms/VisaPagosQueue} y \texttt{VisaPagosQueue} respectivamente. (EXPLICAR PHYSNAME).
+	Además, en el archivo \texttt{jms.properties} asignamos las variables \texttt{jms.factoryname}, \texttt{jms.name} y \texttt{jms.physname} a los valores \texttt{jms/VisaConnectionFactory}, \texttt{jms/VisaPagosQueue} y \texttt{VisaPagosQueue} respectivamente.
 
 
+\newpage
+\section{Ejercicio 12}
+\begin{mdframed}
+ \textbf{Importante: Detenga la ejecución del MDB con la consola de administración para poder
+realizar satisfactoriamente el siguiente ejercicio (check de ‘Enabled’ en Applications/P1-jms-mdb y
+guardar los cambios).}
 
-\section{Ejercicio12}
+\vspace{3mm}
+Modifique el cliente, \texttt{VisaQueueMessageProducer.java}, implementando el envío de\\ \texttt{args[0]} como mensaje
+de texto (consultar los apéndices). Ejecute el cliente en el PC del laboratorio mediante el comando:
+
+\begin{lstlisting}
+/usr/local/glassfish-4.0/glassfish/bin/appclient -targetserver 10.X.Y.Z -client
+dist/clientjms/P1-jms-clientjms.jar idAutorizacion
+\end{lstlisting}
+
+Donde \texttt{10.X.Y.Z} representa la dirección \texttt{IP} de la máquina virtual en cuyo servidor de aplicaciones se
+encuentra desplegado el \texttt{MDB}. Para garantizar que el comando funcione correctamente es necesario fijar
+la variable
+
+\begin{lstlisting}
+(web console->Configurations->server-config->Java Message Service->JMS Hosts->default_JMS_host)
+\end{lstlisting}
+
+\noindent que toma el valor “localhost” por la dirección IP de dicha máquina virtual. El cambio se puede llevar a cabo
+desde la consola de administración. Será necesario reiniciar el servidor de aplicaciones para que surja
+efecto.
+
+\noindent Verifique el contenido de la cola ejecutando:
+\begin{lstlisting}
+/usr/local/glassfish-4.0/glassfish/bin/appclient -targetserver 10.X.Y.Z -client
+dist/clientjms/P1-jms-clientjms.jar -browse
+\end{lstlisting}
+
+\noindent Indique la salida del comando e inclúyala en la memoria de prácticas.
+A continuación, volver a habilitar la ejecución del \texttt{MDB} y realizar los siguientes pasos:
+
+- Realice un pago con la aplicación web
+
+- Obtenga evidencias de que se ha realizado
+
+- Cancélelo con el cliente
+
+- Obtenga evidencias de que se ha cancelado y de que el saldo se ha rectificado
+
+\end{mdframed}
 	
 	Como se indicó en el mensaje posterior a la publicación de la práctica, ejecutamos el cliente jms en una de las máquinas virtuales. En nuestro caso elegimos la 10.1.3.1, ya que de esta manera la cola no estaría en la misma máquina que en la que se ejecutaba el comando.
 
@@ -250,31 +478,35 @@
 
 	Como habíamos enviado el número 1 como mensaje, aprovechamos que en cuanto arrancáramos \texttt{jms-mdb} lo íba a procesar, y efectuamos un pago, que al ser el primero, tomaría la id de autorización 1. Efectivamente, cuando arrancamos el procesador de mensajes, se puso manos a la obra e invalidó el pago que habíamos realizado, devolviendo el dinero a la cuenta.
 
-	\pagebreak
-
-	\begin{figure}[H]
+\vspace{10mm}
+	
+\begin{figure}[H]
+\centering
+	\begin{subfigure}{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{pantallazos/ejercicio12a.png}
 		\caption{Query para comprobar que el pago se había realizado correctamente y ver que su identificador de autorización es, como esperábamos, 1}
-	\end{figure}
+	\end{subfigure}
 
-	\begin{figure}[htbp]
+	\begin{subfigure}{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{pantallazos/ejercicio12b.png}
 		\caption{Query para comprobar que el saldo de la tarjeta ha bajado como era esperado.}
-	\end{figure}
+	\end{subfigure}
 
-	\begin{figure}[htbp]
+	\begin{subfigure}{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{pantallazos/ejercicio12c.png}
 		\caption{Una vez realizada la cancelación vemos como el resultado del pago ha cambiado a 999}
-	\end{figure}
+	\end{subfigure}
 
-	\begin{figure}[htbp]
+	\begin{subfigure}{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{pantallazos/ejercicio12d.png}
 		\caption{Y también el saldo del cliente vuelve a la cantidad inicial: 1000}
-	\end{figure}
+	\end{subfigure}
+\caption{}
+\end{figure}
 
 
 
