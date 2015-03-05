@@ -1,0 +1,19 @@
+\usepackage{multirow}
+
+\newcommand{\cabeceraSI}[2]{
+	\begin{center}
+	\begin{tabularx}{\textwidth}{|c c|X|X|X|X}
+	\hline
+	  \multicolumn{2}{|c|}{\multirow{3}{*}{\includegraphics[scale=0.10]{../uam.png}}} & \multicolumn{4}{c|}{\bfseries Escuela Politécnica Superior}\\
+	  & & \multicolumn{4}{c|}{\bfseries Ingeniería Informática}\\
+	  & & \multicolumn{4}{c|}{\bfseries Prácticas de Sistemas Informáticos 2}\\
+	\hline
+	  \multicolumn{1}{|c|}{\textbf{Grupo}} & 2401 & \multicolumn{1}{|c|}{\textbf{Práctica}} & \multicolumn{1}{>{\centering\arraybackslash}X|}{#1} & \multicolumn{1}{>{\bfseries\centering\arraybackslash}X|}{Fecha} & \multicolumn{1}{c|}{#2}\\
+	\hline
+	  \multicolumn{2}{|c|}{\textbf{Alumno}} & \multicolumn{4}{l|}{Kasner Tourné, Cristina}\\
+	\hline
+	  \multicolumn{2}{|c|}{\textbf{Alumno}} & \multicolumn{4}{l|}{Guridi Mateos, Guillermo}\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
