@@ -151,7 +151,7 @@
 
     <context-param>
         <param-name>service-url</param-name>
-        <param-value>http://10.1.3.1:8080</param-value>
+        <param-value>http://10.1.3.1:8080/P1-ws-ws/VisaDAOWSService</param-value>
     </context-param>
 
 
