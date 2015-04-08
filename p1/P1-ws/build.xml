@@ -174,7 +174,7 @@ ant limpiar-todo
 
        <!--	de desplegar servicio	retrievestubs="${build.client}/WEB-INF/lib" -->
 
-	<target name="replegar" description"Repliega todo" >
+	<target name="replegar" description="Repliega todo" >
 		<antcall target="replegar-servicio" />
 		<antcall target="replegar-cliente" />
 	</target>

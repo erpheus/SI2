@@ -166,13 +166,11 @@ ant limpiar-todo
 	<target name="regenerar-bd" description="Regenera BD" depends="setup-db" >
 	</target>
 	
-	<target name="limpiar" 
-		description="Borra el directorio build">
+	<target name="limpiar" description="Borra el directorio build">
 		<delete dir="${build}" />
 	</target>
 	  
-	<target name="limpiar-todo" 
-		description="Borra el directorio build y el directorio dist">
+	<target name="limpiar-todo" description="Borra el directorio build y el directorio dist">
 		<delete dir="${build}" />
 		<delete dir="${dist}" />
 	</target>
