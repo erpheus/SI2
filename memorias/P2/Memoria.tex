@@ -15,7 +15,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
-
+\usepackage{subfigure} % subfiguras
 \input{../cabecera.tex}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -74,12 +74,99 @@
 %% Documento
 \begin{document}
 
-\cabeceraSI{1b}{8/04/2015}
+\cabeceraSI{2}{8/04/2015}
 
 \section{Ejercicio 1}
 \begin{mdframed} 
-
+Siguiendo todos los pasos anteriores, defina el plan completo de pruebas para realizar las tres 
+ejecuciones secuenciales sobre los tres proyectos definidos hasta ahora (P1-base, P1-ws-cli, P1-ejb). 
+Adjunte el fichero generado P2.jmx al entregable de la práctica. 
 \end{mdframed}
+No hemos tenido ningún problema en definir el plan de pruebas tal y como se nos indicaba en el enunciado.
 
+Adjuntamos una imagen con el árbol de resultados.
+
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ejemplo_tree_result.png}
+	 	\captionÁrbol de resultados}
+	 \end{figure}
+
+
+\section{Ejercicio 2}
+\begin{mdframed} 
+Preparar los PCs con el esquema descrito. Para ello:
+\begin{itemize}
+\item Anote en la memoria de prácticas las direcciones IP asignadas a cada PC. 
+\item Detenga el servidor de GlassFish de los PCs físicos 
+\item Inicie los servidores GlassFish en las máquinas virtuales 
+\item Repliegue todas las aplicaciones o pruebas anteriores (P1-base, P1-ws, etc), para limpiar posibles 
+versiones incorrectas. 
+\item Revise y modifique si es necesario los ficheros build.properties (propiedad “nombre”) de cada 
+versión, de modo que todas las versiones tengan como URL de despliegue las anteriormente 
+indicadas (P1-base, P1-ws, P1-ejb). 
+\item Despliegue las siguientes prácticas: P1-base, P1-ws, P1-ejb, con el siguiente esquema:
+	\begin{itemize}
+	\item El destino del despliegue en todos los casos será PC2VM con IP 10.X.Y.2 (as.host o 
+as.host.client en P1-ws) 
+
+	\item La base de datos en todos ellos será la de PC1VM con IP 10.X.Y.1 (db.host) 
+
+	\item En el caso particular de P1-ws, el servidor SOAP estará en 10.X.Y.1 (variable 
+as.host.server)
+
+	\end{itemize}
+
+\end{itemize}
+Tras detener / iniciar todos los elementos indicados, anotar la salida del comando “free” así como un 
+pantallazo del comando “nmon” (pulsaremos la tecla “m” para obtener el estado de la RAM) tanto en las 
+máquinas virtuales como los PCs físicos. Anote sus comentarios en la memoria. 
+Pruebe a ejecutar un pago “de calentamiento” por cada uno de los métodos anteriores y verifique que 
+funcionan (comprobar resultados en el árbol de resultados). 
+\end{mdframed}
+ \textbf{Dirección IP asignada al PC 1} : 10.1.3.1 \\
+ \textbf{Dirección IP asignada al PC 2} : 10.1.3.2
+
+Tras desplegar y ejecutar free y nmon obtenemos los siguientes resultados:
+
+\begin{figure}[htbp]
+\centering
+\subfigure[free PC1 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/free_PC_1.png}}
+\subfigure[nmon PC1 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_pc_1.png}}
+\subfigure[free PC1 después]{\includegraphics[width=40mm]{../../p2/pantallazos/free_pc1_(glasYpostActiovados).png}}
+\subfigure[nmon PC1 después]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_pc1_(glasYpostActivados).png}}
+\caption{PC 1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[free PC2 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/free_pc_2.png}}
+\subfigure[nmon PC2 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_pc_2.png}}
+\subfigure[free PC2 después]{\includegraphics[width=40mm]{../../p2/pantallazos/free_arrancado_PC_2.png}}
+\subfigure[nmon PC2 después]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_arrancado_PC_2.png}}
+\caption{PC 2}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[free MV1 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/free_mv_1.png}}
+\subfigure[nmon MV1 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_mv_1.png}}
+\subfigure[free MV1 después]{\includegraphics[width=40mm]{../../p2/pantallazos/free_mv1_(freeYpostgresActivados).png}}
+\subfigure[nmon MV1 después]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_mv1_(freeYpostgresActivados).png}}
+\caption{máquina virtual 1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[free MV2 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/free_mv_2.png}}
+\subfigure[nmon MV2 antes]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_mv_2.png}}
+\subfigure[free MV2 después]{\includegraphics[width=40mm]{../../p2/pantallazos/free_arrancado_mv_2.png}}
+\subfigure[nmon MV2 después]{\includegraphics[width=40mm]{../../p2/pantallazos/nmon_arrancado_mv_2.png}}
+\caption{máquina virtual 2}
+\end{figure}
+
+Podemos observar que al hacer free en los PCs, no hay mucha diferencia en el uso de la memoria estando el glassfish y el postgres arrancados o no. Probablemente esto se deba a que los arrancamos dentro de la maquina virtual que probablemente ya tenga parte de la memoria del sistema virtualizado reservada. Ésto se confirma al comprobar que dentro de las máquinas virtuales si que podemos observar un aumento significativo de la memoria usada (entorno a los 140MB).
+
+Nmon, al usarlo para obtener el mismo tipo de estadísticas nos ofrece las mismas conclusiones.
 
 \end{document}
