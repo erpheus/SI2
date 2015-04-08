@@ -89,7 +89,7 @@ Adjuntamos una imagen con el árbol de resultados.
 \begin{figure}[hbtp]
 	 	\centering
 	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ejemplo_tree_result.png}
-	 	\captionÁrbol de resultados}
+	 	\caption {Árbol de resultados}
 	 \end{figure}
 
 \pagebreak
@@ -170,4 +170,122 @@ Podemos observar que al hacer free en los PCs, no hay mucha diferencia en el uso
 
 Nmon, al usarlo para obtener el mismo tipo de estadísticas nos ofrece las mismas conclusiones.
 
+
+\section{Ejercicio 3}
+\begin{mdframed} 
+Ejecute el plan completo de pruebas sobre las 3 versiones de la práctica, empleando el 
+esquema de despliegue descrito anteriormente. Realice la prueba tantas veces como necesite para 
+eliminar ruido relacionado con procesos periódicos del sistema operativo, lentitud de la red u otros 
+elementos. 
+
+\begin{itemize}
+\item Compruebe que efectivamente se han realizado todos los pagos. Es decir, la siguiente 
+consulta deberá devolver “3000”:
+SELECT COUNT(*) FROM PAGO; 
+\end{itemize}  
+\end{mdframed}
+
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej3_select_count.png}
+	 	\caption{Consulta}
+\end{figure}
+
+\begin{mdframed} 
+\begin{itemize}
+\item Compruebe que ninguna de las peticiones ha producido un error. Para ello revise que la 
+columna \%Error indique 0\% en todos los casos. 
+\end{itemize} 
+\end{mdframed}
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej3_report.png}
+	 	\caption{Comprobación error}
+\end{figure}
+\begin{mdframed}
+\begin{itemize}
+Una vez que los resultados han sido satisfactorios: 
+\item Anote los resultados del informe agregado en la memoria de la práctica. 
+\item Salve el fichero server.log que se encuentra en la ruta glassfish/domains/domain1/logs de 
+Glassfish y adjúntelo con la práctica. 
+\item Añada a la memoria de prácticas la siguiente información: ¿Cuál de los resultados le parece el 
+mejor? ¿Por qué? ¿Qué columna o columnas elegiría para decidir este resultado? 
+\end{itemize} 
+\end{mdframed} 
+
+El resultado que nos parece mejor es P1-base ya que tiene el mayor Throughput , para eso nos fijamos en la ultima columna, que es la que nos indica el tráfico por segundo.
+
+\section{Ejercicio 4}
+\begin{mdframed} 
+Adaptar la configuración del servidor de aplicaciones a los valores indicados. Guardar, como 
+referencia, la configuración resultante, contenida en el archivo de configuración localizado en la máquina 
+virtual en \$J2EE_HOME/domains/domain1/config/domain.xml1. Para obtener la versión correcta de este archivo es necesario detener el servidor de aplicaciones. Incluir este fichero en el entregable de la 
+práctica. Se puede copiar al PC del laboratorio con scp. 
+\end{mdframed}
+
+\section{Ejercicio 5}
+\begin{mdframed} 
+Registrar en la hoja de cálculo de resultados los valores de configuración que tienen estos 
+parámetros.
+\end{mdframed}
+
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_2.png}
+	 	\caption{}
+\end{figure}
+
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_3.png}
+	 	\caption{}
+\end{figure}
+
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_4.png}
+	 	\caption{}
+\end{figure}
+
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_5.png}
+	 	\caption{}
+\end{figure}
+
+\section{Ejercicio 6}
+\begin{mdframed} 
+Tras habilitar la monitorización en el servidor, repita la ejecución del plan de pruebas 
+anterior. Durante la prueba, vigile cada uno de los elementos de monitorización descritos hasta 
+ahora. Responda a las siguientes cuestiones: 
+\begin{itemize}
+\item A la vista de los resultados, ¿qué elemento de proceso le parece más costosa? ¿Red? ¿CPU? 
+¿Acceso a datos? En otras palabras, ¿cuál fue el elemento más utilizado durante la monitorización 
+con nmon en un entorno virtual? (CPU, Memoria, disco,…) 
+\item ¿Le parece una situación realista la simulada en este ejercicio? ¿Por qué? 
+\item Teniendo en cuenta cuál ha sido el elemento más saturado, proponga otro esquema de despliegue 
+que resuelva esa situación.
+\end{itemize}
+\end{mdframed}
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/si2_monitor_ej6.png}
+	 	\caption{}
+\end{figure}
+
+
+\section{Ejercicio 7}
+\begin{mdframed} 
+
+\end{mdframed}
+
+\section{Ejercicio 8}
+\begin{mdframed} 
+
+\end{mdframed}
+
+\section{Ejercicio 9}
+\begin{mdframed} 
+
+\end{mdframed}
 \end{document}
