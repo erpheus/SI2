@@ -1,0 +1,150 @@
+#!/bin/bash
+
+test_start=25
+test_incr=50
+test_end=800
+jmx_file=P2-curvaProductividad.jmx
+results_basedir=JMeters
+jmeter_log=jmeter.out.log
+throughput_log=throughput
+rampup_time=10
+remote_monitor=si2@10.1.3.1
+remote_host=si2@10.1.3.2
+target_host=10.1.3.2
+db_host=10.1.3.1
+
+jmeter_path=/home/alumnos/e266328/jakarta-jmeter-2.5.1
+jmeter_path=/home/guillermo/SI2-git/p2/scripts/jakarta-jmeter
+
+# Tool paths
+jmeter=$jmeter_path/bin/jmeter
+jmeter_plugin=$jmeter_path/lib/ext/CMDRunner.jar
+
+# Because Glassfish is crap and doesn't even
+# store their binaries in standard directories
+# we'll have to export the directories before
+# executing anything
+j2ee_home=/opt/glassfish4/glassfish
+asadmin_path=$j2ee_home/bin
+export_stmt="export J2EE_HOME=$j2ee_home; export PATH=\$PATH:$asadmin_path"
+
+
+# Formatting variables
+tbold=$(tput bold)
+tred=$(tput setaf 1)
+tgreen=$(tput setaf 2)
+tyellow=$(tput setaf 3)
+treset=$(tput sgr0)
+
+# Pregenerate directories
+dirname=$results_basedir/$(date +%F-%H%M)
+throughput_log=$dirname/$throughput_log
+
+mkdir -p $dirname
+
+# Ensure the monitor is on the corresponding machine
+monitor_path=/tmp/si2-monitor.sh
+echo "Copying si2-monitor.sh to $remote_monitor:$monitor_path..."
+scp si2-monitor.sh $remote_monitor:$monitor_path
+scp passwordfile $remote_monitor:/tmp/passwordfile
+
+# Cleanup function
+jmeter_pid=0
+monitor_pid=0
+
+function cleanup() {
+	kill -TERM $monitor_pid
+	kill -TERM $jmeter_pid
+	echo "Bye!"
+}
+
+trap cleanup EXIT
+
+for thread_count in $(seq $test_start $test_incr $test_end); do
+	echo "${tbold}Testing for $thread_count users...${treset}"
+
+	# Clean previous payments
+	psql -U alumnodb -h $db_host visa -c "DELETE FROM pago;"
+
+	# Edit the JMX file
+	cat $jmx_file |
+		sed "s/ThreadGroup.num_threads\">[[:digit:]]*/ThreadGroup.num_threads\">$thread_count/g" > jmx.tmp
+	mv jmx.tmp $jmx_file
+
+	logfile=$dirname/results-$thread_count
+	monitorfile=$dirname/monitor-$thread_count
+	aggregatefile=$dirname/aggregate-$thread_count
+
+	echo "===== Running JMeter with $thread_count threads =====" >> $jmeter_log
+	$jmeter -n -t $jmx_file -l $logfile >> $jmeter_log &
+	jmeter_pid=$!
+
+	echo "Waiting for ramp-up time..."
+
+	sleep $rampup_time
+	echo "Launching monitor..."
+	ssh $remote_monitor "$export_stmt; $monitor_path $target_host" > $monitorfile &
+	monitor_pid=$!
+
+	wait $jmeter_pid
+	echo "JMeter finished. Stopping monitor..."
+	ssh -t $remote_monitor "kill -USR1 \$(cat /tmp/monitor.pid)"
+
+	sleep 1
+	kill -INT $monitor_pid
+	monitor_entries=$(cat $monitorfile | wc -l)
+	monitor_entries=$((monitor_entries - 3))
+
+	monitor_jdbc=$(grep -A 1 "TOT.MUESTRAS" $monitorfile | tail -n 1 | awk '{print $2}')
+	monitor_http=$(grep -A 1 "TOT.MUESTRAS" $monitorfile | tail -n 1 | awk '{print $3}')
+	monitor_httpq=$(grep -A 1 "TOT.MUESTRAS" $monitorfile | tail -n 1 | awk '{print $4}')
+
+	echo "Monitor registered $monitor_entries lines"
+
+	actual_payments=$(psql -U alumnodb -h $db_host visa -c "SELECT COUNT(*) FROM pago;" | head -n 3 | tail -n 1)
+	expected_payments=$(echo "10 * $thread_count" | bc)
+
+	if [[ $actual_payments -ne $expected_payments ]]; then
+		echo "${tred}Bad number of payments${treset}"
+		exit 1
+	fi
+
+	# Get the CPU load average
+	cpu_avg=$(ssh $remote_host "cat /proc/loadavg" | awk '{print $1}')
+
+	# Check for errors. If grep doesn't fail, that
+	# means there are lines without 200-OK response
+	# code, abort.
+
+	# Call the JMeter plugin to get the results
+	echo "Parsing results..."
+	echo "" >> $jmeter_log
+	echo "> Reporter log" >> $jmeter_log
+	java -jar $jmeter_plugin --tool Reporter --generate-csv $aggregatefile \
+		--input-jtl $logfile --plugin-type AggregateReport >> $jmeter_log
+
+	echo >> $jmeter_log; echo >> $jmeter_log
+
+	# Get the data we want from the CSV parsed file
+	pago_average=$(grep "procesapago" $aggregatefile | awk -F, '{print $3}')
+	pago_90=$(grep "procesapago" $aggregatefile | awk -F, '{print $5}')
+	pago_throughput=$(grep "procesapago" $aggregatefile | awk -F, '{print $10}')
+	total_average=$(grep "TOTAL" $aggregatefile | awk -F, '{print $3}')
+	total_90=$(grep "TOTAL" $aggregatefile | awk -F, '{print $5}')
+	total_throughput=$(grep "TOTAL" $aggregatefile | awk -F, '{print $10}')
+
+	echo "${tgreen}Throughput for $thread_count users is $total_throughput${treset}"
+	echo $thread_count $cpu_avg $monitor_jdbc $monitor_http $monitor_httpq \
+		$total_average $total_90 $total_throughput \
+		$pago_average $pago_90 $pago_throughput \
+		>> $throughput_log
+	sleep 10
+done
+
+echo "Finished"
+echo "Plotting results..."
+gnuplot -e "thfile='$throughput_log'" throughput.plot
+
+
+
+

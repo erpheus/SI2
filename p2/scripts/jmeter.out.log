@@ -1,0 +1,412 @@
+===== Running JMeter with 25 threads =====
+===== Running JMeter with 25 threads =====
+Error in NonGUIDriver com.thoughtworks.xstream.io.StreamException:  : input contained no data
+===== Running JMeter with 25 threads =====
+Error in NonGUIDriver com.thoughtworks.xstream.io.StreamException:  : input contained no data
+===== Running JMeter with 25 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 03:59:16 CEST 2015 (1428544756990)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 03:59:50 CEST 2015 (1428544790017)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 03:59:52.024 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 03:59:52.050 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 03:59:52.073 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 03:59:52.074 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 03:59:52.546 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 03:59:52.549 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 03:59:52.550 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 03:59:52.562 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 03:59:52.562 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 03:59:52.586 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 03:59:52.586 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 03:59:52.586 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 03:59:52.690 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0359/aggregate-25
+
+
+===== Running JMeter with 75 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:00:04 CEST 2015 (1428544804238)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:00:39 CEST 2015 (1428544839749)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:00:41.769 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:00:41.792 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:00:41.815 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:00:41.816 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:00:42.302 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:00:42.305 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:00:42.306 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:00:42.318 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:00:42.318 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:00:42.342 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:00:42.342 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:00:42.342 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:00:42.523 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0359/aggregate-75
+
+
+===== Running JMeter with 125 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:00:53 CEST 2015 (1428544853996)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:01:29 CEST 2015 (1428544889634)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:01:31.653 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:01:31.676 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:01:31.699 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:01:31.700 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:01:32.187 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:01:32.190 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:01:32.191 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:01:32.202 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:01:32.202 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:01:32.226 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:01:32.226 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:01:32.226 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:01:32.466 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0359/aggregate-125
+
+
+===== Running JMeter with 175 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:01:43 CEST 2015 (1428544903831)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:02:19 CEST 2015 (1428544939956)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:02:21.972 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:02:21.995 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:02:22.016 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:02:22.017 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:02:22.484 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:02:22.487 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:02:22.488 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:02:22.499 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:02:22.499 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:02:22.522 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:02:22.522 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:02:22.522 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:02:22.806 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0359/aggregate-175
+
+
+===== Running JMeter with 225 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:02:34 CEST 2015 (1428544954170)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:03:09 CEST 2015 (1428544989894)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:03:11.904 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:03:11.927 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:03:11.950 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:03:11.951 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:03:12.416 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:03:12.419 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:03:12.419 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:03:12.431 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:03:12.431 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:03:12.455 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:03:12.455 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:03:12.455 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:03:12.779 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0359/aggregate-225
+
+
+===== Running JMeter with 275 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:03:24 CEST 2015 (1428545004087)
+Waiting for possible shutdown message on port 4445
+===== Running JMeter with 25 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:03:43 CEST 2015 (1428545023176)
+Waiting for possible shutdown message on port 4446
+Tidying up ...    @ Thu Apr 09 04:03:59 CEST 2015 (1428545039300)
+... end of run
+Tidying up ...    @ Thu Apr 09 04:04:13 CEST 2015 (1428545053906)
+... end of run
+===== Running JMeter with 25 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:04:29 CEST 2015 (1428545069306)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:05:02 CEST 2015 (1428545102119)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:05:04.185 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:05:04.209 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:05:04.233 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:05:04.234 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:05:04.756 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:05:04.759 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:05:04.760 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:05:04.772 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:05:04.772 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:05:04.795 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:05:04.795 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:05:04.796 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:05:04.902 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-25
+
+
+===== Running JMeter with 75 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:05:16 CEST 2015 (1428545116406)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:05:51 CEST 2015 (1428545151393)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:05:53.433 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:05:53.459 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:05:53.483 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:05:53.484 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:05:53.987 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:05:53.990 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:05:53.991 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:05:54.004 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:05:54.004 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:05:54.033 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:05:54.033 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:05:54.033 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:05:54.254 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-75
+
+
+===== Running JMeter with 125 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:06:05 CEST 2015 (1428545165696)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:06:39 CEST 2015 (1428545199821)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:06:42.057 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:06:42.083 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:06:42.115 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:06:42.116 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:06:42.835 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:06:42.838 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:06:42.839 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:06:42.852 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:06:42.852 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:06:42.888 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:06:42.888 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:06:42.888 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:06:43.235 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-125
+
+
+===== Running JMeter with 175 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:06:54 CEST 2015 (1428545214596)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:07:29 CEST 2015 (1428545249808)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:07:32.198 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:07:32.243 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:07:32.279 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:07:32.279 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:07:32.942 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:07:32.945 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:07:32.946 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:07:32.959 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:07:32.959 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:07:33.016 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:07:33.016 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:07:33.016 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:07:33.377 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-175
+
+
+===== Running JMeter with 225 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:07:44 CEST 2015 (1428545264810)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:08:23 CEST 2015 (1428545303179)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:08:25.597 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:08:25.633 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:08:25.671 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:08:25.671 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:08:26.286 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:08:26.289 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:08:26.290 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:08:26.302 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:08:26.302 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:08:26.329 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:08:26.329 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:08:26.329 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:08:26.787 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-225
+
+
+===== Running JMeter with 275 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:08:38 CEST 2015 (1428545318102)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:09:18 CEST 2015 (1428545358475)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:09:21.159 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:09:21.220 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:09:21.262 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:09:21.265 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:09:22.114 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:09:22.118 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:09:22.119 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:09:22.137 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:09:22.138 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:09:22.197 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:09:22.197 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:09:22.197 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:09:22.749 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-275
+
+
+===== Running JMeter with 325 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:09:34 CEST 2015 (1428545374010)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:10:24 CEST 2015 (1428545424967)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:10:27.788 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:10:27.834 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:10:27.869 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:10:27.870 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:10:28.982 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:10:29.009 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:10:29.010 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:10:29.058 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:10:29.058 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:10:29.101 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:10:29.101 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:10:29.101 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:10:30.031 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-325
+
+
+===== Running JMeter with 375 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:10:40 CEST 2015 (1428545440984)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:11:41 CEST 2015 (1428545501781)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:11:44.618 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:11:44.647 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:11:44.686 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:11:44.687 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:11:45.470 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:11:45.473 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:11:45.474 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:11:45.508 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:11:45.510 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:11:45.552 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:11:45.552 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:11:45.552 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:11:46.470 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-375
+
+
+===== Running JMeter with 425 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:11:57 CEST 2015 (1428545517493)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:13:13 CEST 2015 (1428545593581)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:13:16.312 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:13:16.361 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:13:16.402 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:13:16.403 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:13:17.215 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:13:17.218 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:13:17.219 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:13:17.251 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:13:17.251 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:13:17.302 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:13:17.302 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:13:17.302 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:13:18.405 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-425
+
+
+===== Running JMeter with 475 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:13:29 CEST 2015 (1428545609322)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:14:58 CEST 2015 (1428545698407)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:15:01.340 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:15:01.389 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:15:01.446 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:15:01.452 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:15:02.294 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:15:02.297 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:15:02.298 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:15:02.327 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:15:02.327 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:15:02.384 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:15:02.384 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:15:02.384 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:15:03.651 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-475
+
+
+===== Running JMeter with 525 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:15:14 CEST 2015 (1428545714472)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:17:00 CEST 2015 (1428545820295)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:17:03.852 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:17:03.905 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:17:03.955 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:17:03.974 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:17:04.859 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:17:04.894 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:17:04.895 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:17:04.929 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:17:04.929 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:17:04.976 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:17:04.977 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:17:04.977 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:17:06.339 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-525
+
+
+===== Running JMeter with 575 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:17:17 CEST 2015 (1428545837334)
+Waiting for possible shutdown message on port 4445
+Tidying up ...    @ Thu Apr 09 04:18:55 CEST 2015 (1428545935964)
+... end of run
+
+> Reporter log
+INFO    2015-04-09 04:18:59.161 [kg.apc.j] (): Using JMeterPluginsCMD v. 1.2.1
+INFO    2015-04-09 04:18:59.213 [jmeter.u] (): Setting Locale to en_US
+INFO    2015-04-09 04:18:59.247 [kg.apc.j] (): Loading user properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/user.properties
+INFO    2015-04-09 04:18:59.248 [kg.apc.j] (): Loading system properties from: /home/guillermo/SI2-git/p2/scripts/jakarta-jmeter/bin/system.properties
+INFO    2015-04-09 04:19:00.133 [jmeter.s] (): Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+INFO    2015-04-09 04:19:00.144 [jmeter.s] (): Using SaveService properties file encoding UTF-8
+INFO    2015-04-09 04:19:00.147 [jmeter.s] (): Using SaveService properties file version 1050447
+INFO    2015-04-09 04:19:00.168 [jmeter.s] (): Using SaveService properties version 2.1
+INFO    2015-04-09 04:19:00.169 [jmeter.s] (): All converter versions present and correct
+INFO    2015-04-09 04:19:00.194 [jmeter.s] (): Note: Sample TimeStamps are START times
+INFO    2015-04-09 04:19:00.194 [jmeter.s] (): sampleresult.default.encoding is set to ISO-8859-1
+INFO    2015-04-09 04:19:00.194 [jmeter.s] (): sampleresult.useNanoTime=true
+INFO    2015-04-09 04:19:01.557 [kg.apc.j] (): Saving CSV to /home/guillermo/SI2-git/p2/scripts/JMeters/2015-04-09-0404/aggregate-575
+
+
+===== Running JMeter with 625 threads =====
+Created the tree successfully using P2-curvaProductividad.jmx
+Starting the test @ Thu Apr 09 04:19:12 CEST 2015 (1428545952540)
+Waiting for possible shutdown message on port 4445
