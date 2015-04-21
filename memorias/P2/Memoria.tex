@@ -16,39 +16,13 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{subfigure} % subfiguras
+\usepackage{anysize} % Soporte para el comando \marginsize
+
 \input{../cabecera.tex}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-
-\lstset{ %
-	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
-	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-	breaklines=true,                 % sets automatic line breaking
-	captionpos=b,                    % sets the caption-position to bottom
-	commentstyle=\color{mygreen},    % comment style
-	deletekeywords={...},            % if you want to delete keywords from the given language
-	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-	frame=single,                    % adds a frame around the code
-	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-	keywordstyle=\color{blue},       % keyword style
-	language=Octave,                 % the language of the code
-	morekeywords={*,...},            % if you want to add more keywords to the set
-	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-	numbersep=5pt,                   % how far the line-numbers are from the code
-	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-	showstringspaces=false,          % underline spaces within strings only
-	showtabs=false,                  % show tabs within strings adding particular underscores
-	stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-	stringstyle=\color{mymauve},     % string literal style
-	tabsize=2,                       % sets default tabsize to 2 spaces
-	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
-}
 
 \makeatletter
 \def\@seccntformat#1{%
@@ -71,6 +45,7 @@
 \author{Cristina Kasner Tourné\and Guillermo Guridi Mateos}
 \date{\today}
 
+\marginsize{2cm}{2.5cm}{2.5cm}{2.5cm}
 %% Documento
 \begin{document}
 
@@ -88,7 +63,7 @@ Adjuntamos una imagen con el árbol de resultados.
 
 \begin{figure}[hbtp]
 	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ejemplo_tree_result.png}
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/ejemplo_tree_result.png}
 	 	\caption {Árbol de resultados}
 	 \end{figure}
 
@@ -119,56 +94,58 @@ as.host.server)
 	\end{itemize}
 
 \end{itemize}
-Tras detener / iniciar todos los elementos indicados, anotar la salida del comando “free” así como un 
-pantallazo del comando “nmon” (pulsaremos la tecla “m” para obtener el estado de la RAM) tanto en las 
-máquinas virtuales como los PCs físicos. Anote sus comentarios en la memoria. 
+Tras detener / iniciar todos los elementos indicados, anotar la salida del comando “free” así como un pantallazo del comando “nmon” (pulsaremos la tecla “m” para obtener el estado de la RAM) tanto en las máquinas virtuales como los PCs físicos. Anote sus comentarios en la memoria. 
 Pruebe a ejecutar un pago “de calentamiento” por cada uno de los métodos anteriores y verifique que 
 funcionan (comprobar resultados en el árbol de resultados). 
 \end{mdframed}
  \textbf{Dirección IP asignada al PC 1} : 10.1.3.1 \\
- \textbf{Dirección IP asignada al PC 2} : 10.1.3.2
+ \textbf{Dirección IP asignada al PC 2} : 10.1.3.2 \\
 
 Tras desplegar y ejecutar free y nmon obtenemos los siguientes resultados:
 
 \begin{figure}[htbp]
 \centering
-\subfigure[free PC1 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/free_PC_1.png}}
-\subfigure[nmon PC1 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_pc_1.png}}
-\subfigure[free PC1 después]{\includegraphics[width=60mm]{../../p2/pantallazos/free_pc1_(glasYpostActiovados).png}}
-\subfigure[nmon PC1 después]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_pc1_(glasYpostActivados).png}}
+\subfigure[free PC1 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/free_PC_1.png}}
+\subfigure[nmon PC1 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_pc_1.png}}
+\subfigure[free PC1 después]{\includegraphics[width=70mm]{../../p2/pantallazos/free_pc1_(glasYpostActiovados).png}}
+\subfigure[nmon PC1 después]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_pc1_(glasYpostActivados).png}}
 \caption{PC 1}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[free PC2 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/free_pc_2.png}}
-\subfigure[nmon PC2 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_pc_2.png}}
-\subfigure[free PC2 después]{\includegraphics[width=60mm]{../../p2/pantallazos/free_arrancado_PC_2.png}}
-\subfigure[nmon PC2 después]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_arrancado_PC_2.png}}
+\subfigure[free PC2 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/free_pc_2.png}}
+\subfigure[nmon PC2 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_pc_2.png}}
+\subfigure[free PC2 después]{\includegraphics[width=70mm]{../../p2/pantallazos/free_arrancado_PC_2.png}}
+\subfigure[nmon PC2 después]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_arrancado_PC_2.png}}
 \caption{PC 2}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[free MV1 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/free_mv_1.png}}
-\subfigure[nmon MV1 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_mv_1.png}}
-\subfigure[free MV1 después]{\includegraphics[width=60mm]{../../p2/pantallazos/free_mv1_(freeYpostgresActivados).png}}
-\subfigure[nmon MV1 después]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_mv1_(freeYpostgresActivados).png}}
+\subfigure[free MV1 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/free_mv_1.png}}
+\subfigure[nmon MV1 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_mv_1.png}}
+\subfigure[free MV1 después]{\includegraphics[width=70mm]{../../p2/pantallazos/free_mv1_(freeYpostgresActivados).png}}
+\subfigure[nmon MV1 después]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_mv1_(freeYpostgresActivados).png}}
 \caption{máquina virtual 1}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[free MV2 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/free_mv_2.png}}
-\subfigure[nmon MV2 antes]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_mv_2.png}}
-\subfigure[free MV2 después]{\includegraphics[width=60mm]{../../p2/pantallazos/free_arrancado_mv_2.png}}
-\subfigure[nmon MV2 después]{\includegraphics[width=60mm]{../../p2/pantallazos/nmon_arrancado_mv_2.png}}
+\subfigure[free MV2 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/free_mv_2.png}}
+\subfigure[nmon MV2 antes]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_mv_2.png}}
+\subfigure[free MV2 después]{\includegraphics[width=70mm]{../../p2/pantallazos/free_arrancado_mv_2.png}}
+\subfigure[nmon MV2 después]{\includegraphics[width=70mm]{../../p2/pantallazos/nmon_arrancado_mv_2.png}}
 \caption{máquina virtual 2}
 \end{figure}
 
+El comando free nos muestra el uso de memoria actual en el sistema operativo en el que se ejecute. Para este ejercicio nos hemos fijado sobre todo en el porcentaje de memoria libre, comparando las máquinas y PCs sin haber desplegado nada (para ver el consumo base de memoria) con los valores obtenidos tras desplegar toda la aplicación. 
+
 Podemos observar que al hacer free en los PCs, no hay mucha diferencia en el uso de la memoria estando el glassfish y el postgres arrancados o no. Probablemente esto se deba a que los arrancamos dentro de la maquina virtual que probablemente ya tenga parte de la memoria del sistema virtualizado reservada. Ésto se confirma al comprobar que dentro de las máquinas virtuales si que podemos observar un aumento significativo de la memoria usada (entorno a los 140MB).
 
-Nmon, al usarlo para obtener el mismo tipo de estadísticas nos ofrece las mismas conclusiones.
+Nmon, al usarlo solo con 'm' para obtener el mismo tipo de estadísticas nos ofrece las mismas conclusiones.
+
+Adicionalmente, como era de esperar, los valores iniciales son parecidos en las máquinas virtuales entre ellas y en los PCs entre ellos.
 
 
 \section{Ejercicio 3}
@@ -187,19 +164,19 @@ SELECT COUNT(*) FROM PAGO;
 
 \begin{figure}[hbtp]
 	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej3_select_count.png}
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/ej3_select_count.png}
 	 	\caption{Consulta}
 \end{figure}
 
 \begin{mdframed} 
 \begin{itemize}
 \item Compruebe que ninguna de las peticiones ha producido un error. Para ello revise que la 
-columna \%Error indique 0\% en todos los casos. 
+columna \,\%Error indique 0\% en todos los casos. 
 \end{itemize} 
 \end{mdframed}
 \begin{figure}[hbtp]
 	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej3_report.png}
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/ej3_report.png}
 	 	\caption{Comprobación error}
 \end{figure}
 \begin{mdframed}
@@ -212,47 +189,33 @@ Glassfish y adjúntelo con la práctica.
 mejor? ¿Por qué? ¿Qué columna o columnas elegiría para decidir este resultado? 
 \end{itemize} 
 \end{mdframed} 
+El resultado que nos parece mejor es P1-base ya que tiene el mayor Throughput, para eso nos fijamos en la penúltima columna, que es la que nos indica las peticiones completadas por segundo, también sería importante contemplar la columna del percentil 90\% ya que nos garantiza que la mayoría de las peticiones tardarán menos que ese dato. Una vez más gana P1-base, incluso con un poquito más de margen.
 
-El resultado que nos parece mejor es P1-base ya que tiene el mayor Throughput , para eso nos fijamos en la ultima columna, que es la que nos indica el tráfico por segundo.
+Pierde claramente P1-ws, probablemente por las peticiones http extra que tiene que realizar para procesar cada pago.
+
 
 \section{Ejercicio 4}
 \begin{mdframed} 
 Adaptar la configuración del servidor de aplicaciones a los valores indicados. Guardar, como 
-referencia, la configuración resultante, contenida en el archivo de configuración localizado en la máquina 
-virtual en \$J2EE_HOME/domains/domain1/config/domain.xml1. Para obtener la versión correcta de este archivo es necesario detener el servidor de aplicaciones. Incluir este fichero en el entregable de la 
-práctica. Se puede copiar al PC del laboratorio con scp. 
+referencia, la configuración resultante, contenida en el archivo de configuración localizado en la máquina virtual en \$ J2EE\_HOME/domains/domain1/config/domain.xml1. Para obtener la versión correcta de este archivo es necesario detener el servidor de aplicaciones. Incluir este fichero en el entregable de la práctica. Se puede copiar al PC del laboratorio con scp. 
 \end{mdframed}
+
+A parte de realizar las modificaciones de configuración creamos un pequeño script (con el comando asadmin) que las modifica por nosotros (excepto las de autodeploy y reload), para poder realizar pruebas en los laboratorios más rapidamente.
+
 
 \section{Ejercicio 5}
 \begin{mdframed} 
 Registrar en la hoja de cálculo de resultados los valores de configuración que tienen estos 
 parámetros.
 \end{mdframed}
-
 \begin{figure}[hbtp]
 	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_2.png}
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/ej5.png}
 	 	\caption{}
 \end{figure}
 
-\begin{figure}[hbtp]
-	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_3.png}
-	 	\caption{}
-\end{figure}
 
-\begin{figure}[hbtp]
-	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_4.png}
-	 	\caption{}
-\end{figure}
-
-\begin{figure}[hbtp]
-	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/ej5_conf_5.png}
-	 	\caption{}
-\end{figure}
-
+\pagebreak
 \section{Ejercicio 6}
 \begin{mdframed} 
 Tras habilitar la monitorización en el servidor, repita la ejecución del plan de pruebas 
@@ -267,25 +230,110 @@ con nmon en un entorno virtual? (CPU, Memoria, disco,…)
 que resuelva esa situación.
 \end{itemize}
 \end{mdframed}
+Estos fueron los resultados obtenidos:
 \begin{figure}[hbtp]
 	 	\centering
-	 	\includegraphics[width=1.1\textwidth]{../../p2/pantallazos/si2_monitor_ej6.png}
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/si2_monitor_ej6.png}
 	 	\caption{}
 \end{figure}
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/nmon_ej_6_mejor.png}
+	 	\caption{nmon durante la prueba de P1-base}
+\end{figure}
+\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/nmon_ej6.png}
+	 	\caption{nmon durante la prueba de P1-ws}
+\end{figure}
 
+Lo más costoso resulta ser la CPU. Como se puede apreciar en el pantallazo del nmon, java está ocupando el 87\% del procesador y éste ultimo está trabajando en intervalos cercanos al 100\% durante la duración de las pruebas. La memoria se ocupa, pero no parece ser un factor determinante en el rendimiento de este sistema. El uso de red no parece crer ningún cuello de botella ya que los picos máximos de tráfico están en torno a los 100kbps (al exterior y del exterior), lo cual es perfectamente asumible en una red local.
 
+Cabe destacar, como se puede apreciar en el último pantallazo, que durante la prueba de P1-ws se observa un mayor tráfico en la red.
+
+No consideramos esta prueba una situación realista ya que todos los clientes vienen de uno en uno, y son capaces de hacer el pago directamente, en vez de pasar por todo el proceso de la pasarela. Seróia mejor si vinieran concurrentemente y tardaran algo de tiempo en completar los datos del pago, cosa que no se contempla aquí al hacer la petición directamente a procesapago.
+
+Como el elemento más saturado ha sido la CPU, probablemente se debería, o bien, mejorar la cpu de las máquinas de producción, o desplegar varios servidores en paralelo con un load balancer a la entrada. Como la base de datos está en otra máquina no habría ningún problema en duplicar directamente.
+
+\pagebreak
 \section{Ejercicio 7}
-\begin{mdframed} 
+\begin{mdframed}
+Preparar el script de JMeter para su ejecución en el entorno de pruebas. Cambiar la dirección destino del servidor para que acceda al host en el que se encuentra el servidor de aplicaciones. Crear también el directorio datagen en el mismo directorio donde se encuentre el script, y copiar en él el archivo listado.csv, ya que de dicho archivo, al igual que en las prácticas anteriores, se obtienen los datos necesarios para simular el pago.
 
+A continuación, realizar una ejecución del plan de pruebas, con un único usuario, una única ejecución, y un think time bajo (entre 1 y 2 segundos) para verificar que el sistema funciona correctamente. Comprobar, mediante el listener View Results Tree que las peticiones se ejecutan correctamente, no se produce ningún tipo de error y los resultados que se obtienen son los adecuados.
+Una vez comprobado que todo el proceso funciona correctamente, desactivar dicho listener del plan de pruebas para que no aumente la carga de proceso de JMeter durante el resto de la prueba.
+Este ejercicio no genera información en la memoria de la práctica, realícelo únicamente para garantizar que la siguiente prueba va a funcionar.
 \end{mdframed}
+
+Decidimos ejecutar el monitor directamente en la maquina-2 y recoger los resultados de ella cada vez que terminamos una prueba.
 
 \section{Ejercicio 8}
-\begin{mdframed} 
+\begin{mdframed}
+
+Obtener la curva de productividad, siguiendo los pasos que se detallan a continuación:
+\begin{itemize}
+	\item Previamente a la ejecución de la prueba se lanzará una ejecución del script de pruebas (unas 10 ejecuciones de un único usuario) de la que no se tomarán resultados, para iniciar el sistema y preparar medidas consistentes a lo largo de todo al proceso.
+
+	Borrar los resultados de la ejecución anterior. En la barra de acción de JMeter, seleccionar Run $\rightarrow$ Clear All.
+
+	\item Borrar los datos de pagos en la base de datos VISA.
+	\item Seleccionar el número de usuarios para la prueba en JMeter (parámetro C de la prueba)
+	\item Conmutar en JMeter a la pantalla de presentación de resultados, Aggregate Report.
+	\item Ejecutar la prueba. En la barra de accioón de JMeter, seleccionar Run $\rightarrow$ Start.
+	\item Ejecutar el programa de monitorización si2-monitor.sh.
+	\begin{itemize}
+		\item Arrancarlo cuando haya pasado el tiempo definido como rampa de subida de usuarios en JMeter.
+		\item Detenerlo cuando esté a punto de terminar la ejecución de la prueba.
+		\item Registrar los resultados que proporciona la monitorización en la hoja de cálculo.
+	\end{itemize}
+	\item Durante el periodo de monitorización anterior, vigilar que los recursos del servidor si2srv02 y del ordenador que se emplea para realizar la prueba no se saturen, mediante inspección del programa de monitorización nmon que se ejecuta en ambas máquinas.
+	\item Finalizada la prueba, salvar el resultado de la ejecución del Aggregate Report en un archivo, y registrar en la hoja de cálculo de resultados los valores Average, 90\% line y Throughput para las siguientes peticiones:
+	\begin{itemize}
+		\item ProcesaPago.
+		\item Total.
+	\end{itemize}
+	Una vez realizadas las iteraciones necesarias para alcanzar la saturación, representar la curva de Throughput versus usuarios.
+\end{itemize}
 
 \end{mdframed}
+
+Realizamos las pruebas pedidas empezando en 25 y subiendo de 50 en 50 hasta 775, con la ayuda de un pequeño script para minimizar la influencia del factor humano en los resultados.
 
 \section{Ejercicio 9}
 \begin{mdframed} 
-
+Responda a las siguientes cuestiones:
+\begin{itemize}
+	\item A partir de la curva obtenida, determinar para cuántos usuarios conectados se produce el punto de saturación, cuál es el máximo throughput que se alcanza en el mismo, y el throughput máximo que se obtiene en zona de saturación.
+	\item Analizando los valores de monitorización que se han ido obteniendo durante la elaboración de la curva, sugerir el parámetro del servidor de aplicaciones que se cambiaría para obtener el punto de saturación en un número mayor de usuarios.
+	\item Realizar el ajuste correspondiente en el servidor de aplicaciones, reiniciarlo y tomar una nueva muestra cercana al punto de saturación. ¿Ha mejorado el rendimiento del sistema? Documente en la memoria de prácticas el cambio realizado y la mejora obtenida.
+\end{itemize}
 \end{mdframed}
+
+	\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/ej9.png}
+	\end{figure}
+
+	La curva obtenida es bastante suave, pero estimamos que el punto de saturación se encuentra en torno a los 900 usuarios. A partir de ahí el trhoughput del servidor aumenta bastante más lentamente y hasta decrece un poco.
+
+	El throughput máximo que hemos alcanzado en el punto de saturación está en torno a las 530 peticiones por segundo. En la zona de saturación aumenta hasta las 550 peticiones por segundo.
+
+	Viendo los parámetros del servidor, vemos que la cpu está parada la mayoría del tiempo y que lo que aumenta más rapidamente es el número de peticiones encoladas a la entrada del servidor. Así que decidimos aumentar el número de hilos para recibir las peticiones.
+
+	\pagebreak
+
+	\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/ej9_param.png}
+	 	\caption{nuevos parámetros}
+	\end{figure}
+
+	Con los nuevos prámetros obtuvimos estos resultados, mucho mejores. Se puede ver como el punto de saturación aumenta más o menos hasta los 1000 usuarios y throughput en saturación hasta 600-610 peticiones por segundo.
+
+	\begin{figure}[hbtp]
+	 	\centering
+	 	\includegraphics[width=0.8\textwidth]{../../p2/pantallazos/ej9b.png}
+	\end{figure}
+
+
 \end{document}
