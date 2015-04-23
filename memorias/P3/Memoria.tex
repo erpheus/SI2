@@ -69,6 +69,7 @@
 
 %% Documento
 \begin{document}
+
 \cabeceraSI{3}{23/04/2015}
 
 
@@ -108,14 +109,20 @@ Hemos realizado el ejercicio siguiendo los pasos que nos daban en el enunciado y
 
 Adjuntamos una evidencia del inicio remoto de sesión (salida de ssh -v).
 
+En este pantallazo podemos observar las distintas fases que sigue el comando \texttt{ssh} para conectarse a una de las máquinas virtuales. Despues de unos mensajes de inicialización vemos que nos enseña que ha reconocido la firma de la máquina virtual (que había sido guardada la primera vez que ejecutamos el comando y escribimos \texttt{yes}).
+
+Después pasa a intentar conectarse sin usar contraseña, usando su clave asimétrica. Intenta la clave rsa y otra llamada \texttt{identity}, pero al final la que funciona es la que hemos instalado previamente en el servidor: \texttt{id\_dsa}.
+
+Los dos PCs pasan a la negociación con las claves y después el que inicia la conexión pasa variables de entorno. 
+
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ssh-v.png}
+	\includegraphics[width=0.9\textwidth]{../../P3/pantallazos/ssh-v.png}
 	\caption {Salida del ssh -v}
 \end{figure}
 
  
-\newpage
+%\newpage
 \section{Ejercicio2}
 
 
@@ -136,6 +143,9 @@ Adjuntamos una evidencia del inicio remoto de sesión (salida de ssh -v).
  		\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej2_listar_instancias.png}
  		\caption {Lista de instancias}
  	\end{figure}
+
+ 	Además pudimos comprobar ejecutando \texttt{ps -aef | grep 2029} y \texttt{ps -aef | grep 2123} que estos PIDs se correspondían a procesos de java. 
+
  \newpage
  \section{Ejercicio3}
  
@@ -150,7 +160,7 @@ Adjuntamos una evidencia del inicio remoto de sesión (salida de ssh -v).
  	 pantalla de la tabla de pagos). 
  \end{mdframed}
  
-Este ejercicio nos ha costado un poc más que los anteriores ya que hemos tenido un par de fallos trabajando con la base de datos.
+Este ejercicio nos ha costado un poco más que los anteriores ya que hemos tenido un par de fallos trabajando con la base de datos.
 
 Finalmente hemos conseguido solucionarlos y realizar los pagos.
 
@@ -228,8 +238,9 @@ Una vez hecho esto realizamos las actividades del ejercicio 4:
 	\caption { Cookies }
 \end{figure}
 \newpage
-Intentamos realizar pagos sin la propiedad jvmRoute pero nos fallan ya que el balanceador manda los datos a una máquina e intenta realizar el pago con la otra.
+Intentamos realizar pagos sin la propiedad jvmRoute pero nos fallan ya que el balanceador manda los datos a una instancia e intenta realizar el pago con la otra.
 
+Como veremos más tarde esto se debe a que el balanceador alternará las instancias en cada petición al principio de su ejecución.
 
 Al añadir la propiedad podemos hacer todos los pagos que queramos y no falla ninguno, siempre y cuando los datos sean correctos.
 
@@ -262,6 +273,7 @@ Vemos que todas las peticiones que realiza el PC1 van a la Instace01 y las del P
 \end{figure}
 
 \newpage
+\vspace{-1cm}
 \section{Ejerecicio6}
 \begin{mdframed}
 	\textbf{Comprobación del proceso de fail-over.} Parar la instancia del cluster que haya tenido
@@ -277,15 +289,19 @@ Hemos mirado en el balancer-manager cual era la instancia con menos peticiones y
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-balancer1.png}
+	\includegraphics[width=0.7\textwidth]{../../P3/pantallazos/ej6-balancer1.png}
 	\caption { Balancer-manager }
 \end{figure}
 
-Buscamos el pid y hacemos kill a ese proceso mediante la siguiente secuencia de comandos.
+Conectándonos a la maquina 3, buscamos el pid y hacemos kill a ese proceso mediante el comando: 
+
+\texttt{kill -9 \$(ps -aef | grep java | grep -v grep | awk '{print \$2;}')}
+
+Lo que hace es buscar entre todos los procesos aquellos que incluyan java y no incluyan grep, y luego extrae el pid, que se encuentra en la segunda columna.
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-comandos.png}
+	\includegraphics[width=0.7\textwidth]{../../P3/pantallazos/ej6-comandos.png}
 	\caption { Secuencia de comandos }
 \end{figure}
 
@@ -293,7 +309,7 @@ Finalmente comprobamos que en el balancer-manager el status de la instancia 2 es
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-balancer2.png}
+	\includegraphics[width=0.7\textwidth]{../../P3/pantallazos/ej6-balancer2.png}
 	\caption { Balancer-manager }
 \end{figure}
 
@@ -301,7 +317,7 @@ Si volvemos a realizar pagos, vemos que los pagos realizados desde el PC2 (ip 10
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-bd.png}
+	\includegraphics[width=0.7\textwidth]{../../P3/pantallazos/ej6-bd.png}
 	\caption { Base de datos }
 \end{figure}
 
@@ -351,7 +367,7 @@ Empezamos el pago desde un navegador con las cookies limpias.
 
 Al llegar a la pantalla de "Pago con tarjeta" mirarmos las cookies del navegador y comprobamos en la cookie JSESSIONID que el balanceador ha asignado esta petición a la instancia 2.
 
-Nos metemos a la máquina 3 y ejecutamos el mismo comando que el ejercicio anterior para detener la instancia 2.
+Nos metemos a la máquina 3 y ejecutamos el mismo comando que el ejercicio 6 para detener la instancia 2.
 
 Tras hacer esto intentamos seguir con el pago. Completamos los datos y al intentar pagar recibimos un mensaje de "pago incorrecto".
 
