@@ -252,6 +252,16 @@ Vemos que la mayor diferencia entre ellas es que en los datos de la cookie despu
 	 que se mantiene la sesión iniciada por cada usuario sobre el mismo nodo. 
 \end{mdframed}
 
+Realizamos los pagos desde diferentes ordenadores. El PC1 empieza sus peticiones con idComercio e idTransacción 1 y el PC2 con idComercio e idTransacción 20. 
+Vemos que todas las peticiones que realiza el PC1 van a la Instace01 y las del PC2 a la Instance02.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej5.png}
+	\caption { Pagos }
+\end{figure}
+
+\newpage
 \section{Ejerecicio6}
 \begin{mdframed}
 	\textbf{Comprobación del proceso de fail-over.} Parar la instancia del cluster que haya tenido
@@ -265,9 +275,37 @@ Vemos que la mayor diferencia entre ellas es que en los datos de la cookie despu
 
 Hemos mirado en el balancer-manager cual era la instancia con menos peticiones y es la 2.
 
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-balancer1.png}
+	\caption { Balancer-manager }
+\end{figure}
+
 Buscamos el pid y hacemos kill a ese proceso mediante la siguiente secuencia de comandos.
 
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-comandos.png}
+	\caption { Secuencia de comandos }
+\end{figure}
+
 Finalmente comprobamos que en el balancer-manager el status de la instancia 2 es Err.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-balancer2.png}
+	\caption { Balancer-manager }
+\end{figure}
+
+Si volvemos a realizar pagos, vemos que los pagos realizados desde el PC2 (ip 10.1.3.3) , que antes iban a la instancia 2, ahora también se realizan en la instancia 1.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej6-bd.png}
+	\caption { Base de datos }
+\end{figure}
+
+\newpage
 \section{Ejercicio7}
 \begin{mdframed}
 	 \textbf{Comprobación del proceso de fail-back.} Inicie manualmente la instancia detenida en el
@@ -282,8 +320,16 @@ Antes de realizar más pagos borramos las cookies ya que tras el proceso de fail
 
 Realizamos más pagos y vemos que efectivamente se vuelven a repartir las peticiones entre las dos instancias.
 
+
 Además en el balancer-manager, la segunda instancia no tiene como status Err, sino Ok.
 
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej7.png}
+	\caption { Activación instancia 2 }
+\end{figure}
+\newpage
 \section{Ejercicio8}
 \begin{mdframed}
 	 \textbf{Fallo en el transcurso de una sesión.}
@@ -309,8 +355,8 @@ Nos metemos a la máquina 3 y ejecutamos el mismo comando que el ejercicio anter
 
 Tras hacer esto intentamos seguir con el pago. Completamos los datos y al intentar pagar recibimos un mensaje de "pago incorrecto".
 
-La causa de este fallo es la misma que la del ejercicio 4 cuando no teniamos activada la propiedad jvmRoute ya que intentamos continuar un pago en la instancia en la que no está el PagoBean que se creó con la primera petición.
-
+La causa de este fallo es la misma que la del ejercicio 4, cuando no teniamos activada la propiedad jvmRoute ya que intentamos continuar un pago en la instancia en la que no está el PagoBean que se creó con la primera petición.
+\newpage
 \section{Ejercicio9}
 \begin{mdframed}
 	Modificar el script de pruebas JMeter desarrollado durante la P2. (P2.xml) Habilitar un ciclo de
@@ -321,8 +367,39 @@ La causa de este fallo es la misma que la del ejercicio 4 cuando no teniamos act
 	seguido el balanceador? Comente todas sus conclusiones en la memoria de prácticas. 
 \end{mdframed}
 
-\newpage
-\appendix
-\section{Apéncices}
+Realizamos las pruebas tal y como se nos pide en el enunciado.
+Al mirar en la base de datos vemos que el 50\% de las peticiones ha ido a la instancia 1 y el otro 50\% a la instancia 2.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej9_bd.png}
+	\caption { Porcentajes instancias }
+\end{figure}
+
+Comprobamos que todos los pagos sean correctos haciendo una consulta en la base de datos y efectivamente, hay 1000 pagos y ninguno falla.También comprobamos aleatoriamente algunas entradas del árbol de resultados del JMeter.
+
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej9_pagos_correctos.png}
+	\caption { Pagos correctos }
+\end{figure}
+
+Vemos que al principio el balanceador empieza alternando las peticiones entre las instancias y a medida que pasa el tiempo alterna en bloques más grandes.
+
+\begin{figure}[htbp]
+	\centering
+	\subfigure[Alternando cada petición]{\includegraphics[width=40mm]{../../P3/pantallazos/ej9_alternando.png}}
+	\subfigure[Alternando por bloques]{\includegraphics[width=40mm]{../../P3/pantallazos/ej9_alternando2.png}}
+	\caption{Alterando instancias}
+\end{figure}
+
+Según esto creemos que el balanceador alterna mucho al principio porque está calculando la media de trabajo de cada instancia. Al ser estas instancias iguales , el trabajo se distribuye de forma equitativa.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej9_manager.png}
+	\caption { Obtemos los mismos resultados de distribución que en la base de datos }
+\end{figure}
 
 \end{document}

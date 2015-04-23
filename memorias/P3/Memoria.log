@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.1.20)  23 APR 2015 11:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.1.20)  23 APR 2015 12:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -983,7 +983,7 @@ e
 ))
 \c@lstlisting=\count162
 
-<../uam.png, id=44, 552.0625pt x 310.15875pt> <use ../uam.png>
+<../uam.png, id=40, 552.0625pt x 310.15875pt> <use ../uam.png>
 <use ../uam.png> <use ../uam.png> <use ../uam.png> <use ../uam.png>
 <use ../uam.png>
 File: ../uam.png Graphic file (type png)
@@ -1003,7 +1003,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 75.
 
-<../../P3/pantallazos/ssh-v.png, id=45, 643.40375pt x 861.2175pt>
+<../../P3/pantallazos/ssh-v.png, id=41, 643.40375pt x 861.2175pt>
 File: ../../P3/pantallazos/ssh-v.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ssh-v.png>
@@ -1080,7 +1080,7 @@ LaTeX Font Info:    Try loading font information for OT1+zi4 on input line 124.
 (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/ot1zi4.fd
 File: ot1zi4.fd 2014/06/22 OT1/zi4 (Inconsolata)
 )
-<../../P3/pantallazos/ej2_listar_instancias.png, id=59, 654.445pt x 76.285pt>
+<../../P3/pantallazos/ej2_listar_instancias.png, id=55, 654.445pt x 76.285pt>
 File: ../../P3/pantallazos/ej2_listar_instancias.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ej2_listar_instancias.png>
@@ -1125,7 +1125,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 140.
 
-<../../P3/pantallazos/ej3_instancia1.png, id=66, 626.34pt x 366.36874pt>
+<../../P3/pantallazos/ej3_instancia1.png, id=62, 626.34pt x 366.36874pt>
 File: ../../P3/pantallazos/ej3_instancia1.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ej3_instancia1.png>
@@ -1133,7 +1133,7 @@ Package pdftex.def Info: ../../P3/pantallazos/ej3_instancia1.png used on input
 line 167.
 (pdftex.def)             Requested size: 113.81102pt x 66.56964pt.
 
-<../../P3/pantallazos/ej3_instancia2.png, id=67, 642.4pt x 355.3275pt>
+<../../P3/pantallazos/ej3_instancia2.png, id=63, 642.4pt x 355.3275pt>
 File: ../../P3/pantallazos/ej3_instancia2.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ej3_instancia2.png>
@@ -1141,7 +1141,7 @@ Package pdftex.def Info: ../../P3/pantallazos/ej3_instancia2.png used on input
 line 168.
 (pdftex.def)             Requested size: 113.81102pt x 62.94771pt.
 
-<../../P3/pantallazos/ej3_bd.png, id=68, 1099.10625pt x 95.35625pt>
+<../../P3/pantallazos/ej3_bd.png, id=64, 1099.10625pt x 95.35625pt>
 File: ../../P3/pantallazos/ej3_bd.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ej3_bd.png>
@@ -1210,7 +1210,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 212.
- [5] <../../P3/pantallazos/manager.png, id=93, 575.14874pt x 385.44pt>
+ [5] <../../P3/pantallazos/manager.png, id=89, 575.14874pt x 385.44pt>
 File: ../../P3/pantallazos/manager.png Graphic file (type png)
 
 <use ../../P3/pantallazos/manager.png>
@@ -1218,7 +1218,7 @@ Package pdftex.def Info: ../../P3/pantallazos/manager.png used on input line 21
 7.
 (pdftex.def)             Requested size: 276.00105pt x 184.96793pt.
 
-<../../P3/pantallazos/ej4_cookies.png, id=94, 712.6625pt x 377.41pt>
+<../../P3/pantallazos/ej4_cookies.png, id=90, 712.6625pt x 377.41pt>
 File: ../../P3/pantallazos/ej4_cookies.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ej4_cookies.png>
@@ -1250,7 +1250,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 230.
  [6 <../../P3/pantallazos/manager.png> <../../P3/pantallazos/ej4_cookies.png>]
-<../../P3/pantallazos/ej4-jsessionid.png, id=101, 680.5425pt x 302.12875pt>
+<../../P3/pantallazos/ej4-jsessionid.png, id=97, 680.5425pt x 302.12875pt>
 File: ../../P3/pantallazos/ej4-jsessionid.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ej4-jsessionid.png>
@@ -1258,7 +1258,7 @@ Package pdftex.def Info: ../../P3/pantallazos/ej4-jsessionid.png used on input
 line 240.
 (pdftex.def)             Requested size: 113.81102pt x 50.52676pt.
 
-<../../P3/pantallazos/ej4-jsessionid2.png, id=102, 688.5725pt x 305.14pt>
+<../../P3/pantallazos/ej4-jsessionid2.png, id=98, 688.5725pt x 305.14pt>
 File: ../../P3/pantallazos/ej4-jsessionid2.png Graphic file (type png)
 
 <use ../../P3/pantallazos/ej4-jsessionid2.png>
@@ -1303,169 +1303,317 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 247.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 247.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 255.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 255.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 255.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 255.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 255.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 255.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 271.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 271.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 271.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 271.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 271.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 271.
 
-Overfull \hbox (24.02823pt too wide) in paragraph at lines 279--280
+<../../P3/pantallazos/ej5.png, id=107, 1083.04625pt x 229.85875pt>
+File: ../../P3/pantallazos/ej5.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej5.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej5.png used on input line 260.
+(pdftex.def)             Requested size: 276.00105pt x 58.57637pt.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 264.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 264.
+ [8 <../../P3/pantallazos/ej5.png>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 265.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 265.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 265.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 265.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 265.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 265.
+
+<../../P3/pantallazos/ej6-balancer1.png, id=113, 559.08875pt x 76.285pt>
+File: ../../P3/pantallazos/ej6-balancer1.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej6-balancer1.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej6-balancer1.png used on input l
+ine 280.
+(pdftex.def)             Requested size: 276.00105pt x 37.66049pt.
+
+<../../P3/pantallazos/ej6-comandos.png, id=114, 598.235pt x 104.39pt>
+File: ../../P3/pantallazos/ej6-comandos.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej6-comandos.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej6-comandos.png used on input li
+ne 288.
+(pdftex.def)             Requested size: 276.00105pt x 48.16173pt.
+
+<../../P3/pantallazos/ej6-balancer2.png, id=115, 555.07375pt x 74.2775pt>
+File: ../../P3/pantallazos/ej6-balancer2.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej6-balancer2.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej6-balancer2.png used on input l
+ine 296.
+(pdftex.def)             Requested size: 276.00105pt x 36.9335pt.
+
+<../../P3/pantallazos/ej6-bd.png, id=116, 1081.03876pt x 47.17625pt>
+File: ../../P3/pantallazos/ej6-bd.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej6-bd.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej6-bd.png used on input line 304
+.
+(pdftex.def)             Requested size: 276.00105pt x 12.04453pt.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 308.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 308.
+ [9 <../../P3/pantallazos/ej6-balancer1.png> <../../P3/pantallazos/ej6-comandos
+.png> <../../P3/pantallazos/ej6-balancer2.png>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 309.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 309.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 309.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 309.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 309.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 309.
+
+Overfull \hbox (24.02823pt too wide) in paragraph at lines 317--318
 []\OT1/cmr/m/n/10 Para ini-ciar la ins-tan-cia de-te-ni-da uti-li-za-mos el co-
 man-do : \OT1/zi4/m/n/10 asadmin start-instance
  []
 
+<../../P3/pantallazos/ej7.png, id=124, 549.05125pt x 70.2625pt>
+File: ../../P3/pantallazos/ej7.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej7.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej7.png used on input line 329.
+(pdftex.def)             Requested size: 276.00105pt x 35.3209pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 287.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 287.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 287.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 287.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 287.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 287.
-Package mdframed Info: Not enough space on this page on input line 302.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 332.
+ [10 <../../P3/pantallazos/ej6-bd.png> <../../P3/pantallazos/ej7.png>]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 302.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 302.
-[8]
-Package mdframed Info: Not enough space on this page on input line 302.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 359.
+ [11]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 324.
- [9]
+(babel)             in language  on input line 360.
+
+<../../P3/pantallazos/ej9_bd.png, id=135, 446.66875pt x 187.70125pt>
+File: ../../P3/pantallazos/ej9_bd.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej9_bd.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej9_bd.png used on input line 375
+.
+(pdftex.def)             Requested size: 276.00105pt x 115.98405pt.
+
+<../../P3/pantallazos/ej9_pagos_correctos.png, id=136, 646.415pt x 84.315pt>
+File: ../../P3/pantallazos/ej9_pagos_correctos.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej9_pagos_correctos.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej9_pagos_correctos.png used on i
+nput line 384.
+(pdftex.def)             Requested size: 276.00105pt x 35.99998pt.
+
+<../../P3/pantallazos/ej9_alternando.png, id=137, 366.36874pt x 212.795pt>
+File: ../../P3/pantallazos/ej9_alternando.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej9_alternando.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej9_alternando.png used on input 
+line 392.
+(pdftex.def)             Requested size: 113.81102pt x 66.10213pt.
+
+<../../P3/pantallazos/ej9_alternando2.png, id=138, 363.3575pt x 184.69pt>
+File: ../../P3/pantallazos/ej9_alternando2.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej9_alternando2.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej9_alternando2.png used on input
+ line 393.
+(pdftex.def)             Requested size: 113.81102pt x 57.84792pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 326.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 326.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 328.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 398.
+ [12 <../../P3/pantallazos/ej9_bd.png> <../../P3/pantallazos/ej9_pagos_correcto
+s.png> <../../P3/pantallazos/ej9_alternando.png> <../../P3/pantallazos/ej9_alte
+rnando2.png>]
+<../../P3/pantallazos/ej9_manager.png, id=148, 564.1075pt x 73.27374pt>
+File: ../../P3/pantallazos/ej9_manager.png Graphic file (type png)
+
+<use ../../P3/pantallazos/ej9_manager.png>
+Package pdftex.def Info: ../../P3/pantallazos/ej9_manager.png used on input lin
+e 401.
+(pdftex.def)             Requested size: 276.00105pt x 35.85077pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 405.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 405.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 405.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 405.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 405.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 328.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
+(babel)             in language  on input line 405.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 405.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 405.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 405.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 405.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 405.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 405.
+ [13 <../../P3/pantallazos/ej9_manager.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
  (./Memoria.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 328.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
 Package rerunfilecheck Info: File `Memoria.out' has not changed.
-(rerunfilecheck)             Checksum: E00765F0779BCD87DF736C291B451DC5;460.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
+(rerunfilecheck)             Checksum: 0D00B103F525DBCDB6923880E19E9077;407.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 405.
  ) 
 Here is how much of TeX's memory you used:
- 14978 strings out of 493104
- 254640 string characters out of 6136932
- 377334 words of memory out of 5000000
- 18250 multiletter control sequences out of 15000+600000
+ 15046 strings out of 493104
+ 256674 string characters out of 6136932
+ 375334 words of memory out of 5000000
+ 18293 multiletter control sequences out of 15000+600000
  5054 words of font info for 19 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,13n,39p,10396b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,13n,39p,10396b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ot1-0.enc}</usr
 /share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/s
@@ -1473,10 +1621,10 @@ hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Memoria.pdf (10 pages, 299364 bytes).
+Output written on Memoria.pdf (13 pages, 429264 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
