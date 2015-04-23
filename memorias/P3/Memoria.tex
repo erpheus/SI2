@@ -12,6 +12,8 @@
 \usepackage{appendix}
 \usepackage{mdframed}
 
+\input{../cabecera.tex}
+
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
@@ -67,8 +69,8 @@
 
 %% Documento
 \begin{document}
-\maketitle
-\newpage
+\cabeceraSI{3}{23/04/2015}
+
 
 \section{Ejercicio 1}
 \begin{mdframed}
@@ -103,6 +105,16 @@
 
 
 Hemos realizado el ejercicio siguiendo los pasos que nos daban en el enunciado y no hemos tenido ningún problema.
+
+Adjuntamos una evidencia del inicio remoto de sesión (salida de ssh -v).
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ssh-v.png}
+	\caption {Salida del ssh -v}
+\end{figure}
+
+ 
 \newpage
 \section{Ejercicio2}
 
@@ -215,7 +227,22 @@ Una vez hecho esto realizamos las actividades del ejercicio 4:
 	\includegraphics[width=0.8\textwidth]{../../P3/pantallazos/ej4_cookies.png}
 	\caption { Cookies }
 \end{figure}
+\newpage
+Intentamos realizar pagos sin la propiedad jvmRoute pero nos fallan ya que el balanceador manda los datos a una máquina e intenta realizar el pago con la otra.
 
+
+Al añadir la propiedad podemos hacer todos los pagos que queramos y no falla ninguno, siempre y cuando los datos sean correctos.
+
+Adjuntamos los datos de la cookie JSESSIONID antes y después de añadir la nueva propiedad.
+
+\begin{figure}[htbp]
+	\centering
+	\subfigure[Instancia01]{\includegraphics[width=40mm]{../../P3/pantallazos/ej4-jsessionid.png}}
+	\subfigure[Instancia02]{\includegraphics[width=40mm]{../../P3/pantallazos/ej4-jsessionid2.png}}
+	\caption{Datos de JSESSIONID}
+\end{figure}
+
+Vemos que la mayor diferencia entre ellas es que en los datos de la cookie después de añadir la propiedad se incluye \texttt{.Instance01}, lo que indica al load\_balancer de Apache, que las peticiones desde ese navegador deben ser dirigidas a la instancia 1 (porque es la instancia que generó la página anterior del usuario).
 \newpage
 \section{Ejercicio5}
 \begin{mdframed}
@@ -236,6 +263,11 @@ Una vez hecho esto realizamos las actividades del ejercicio 4:
 	en la memoria de la práctica. 
 \end{mdframed}
 
+Hemos mirado en el balancer-manager cual era la instancia con menos peticiones y es la 2.
+
+Buscamos el pid y hacemos kill a ese proceso mediante la siguiente secuencia de comandos.
+
+Finalmente comprobamos que en el balancer-manager el status de la instancia 2 es Err.
 \section{Ejercicio7}
 \begin{mdframed}
 	 \textbf{Comprobación del proceso de fail-back.} Inicie manualmente la instancia detenida en el
@@ -243,6 +275,14 @@ Una vez hecho esto realizamos las actividades del ejercicio 4:
 	 evidencias en la memoria de prácticas. \textbf{Consulte los apéndices para información detallada de
 	 comandos de gestión individual de las instancias.}
 \end{mdframed}
+
+Para iniciar la instancia detenida utilizamos el comando : \texttt{asadmin start-instance Instance02}.
+
+Antes de realizar más pagos borramos las cookies ya que tras el proceso de fail-over, las cookies de afinidad han cambiado todas a la instancia 1.
+
+Realizamos más pagos y vemos que efectivamente se vuelven a repartir las peticiones entre las dos instancias.
+
+Además en el balancer-manager, la segunda instancia no tiene como status Err, sino Ok.
 
 \section{Ejercicio8}
 \begin{mdframed}
@@ -260,6 +300,16 @@ Una vez hecho esto realizamos las actividades del ejercicio 4:
 	 \end{itemize}
 	
 \end{mdframed}
+
+Empezamos el pago desde un navegador con las cookies limpias.
+
+Al llegar a la pantalla de "Pago con tarjeta" mirarmos las cookies del navegador y comprobamos en la cookie JSESSIONID que el balanceador ha asignado esta petición a la instancia 2.
+
+Nos metemos a la máquina 3 y ejecutamos el mismo comando que el ejercicio anterior para detener la instancia 2.
+
+Tras hacer esto intentamos seguir con el pago. Completamos los datos y al intentar pagar recibimos un mensaje de "pago incorrecto".
+
+La causa de este fallo es la misma que la del ejercicio 4 cuando no teniamos activada la propiedad jvmRoute ya que intentamos continuar un pago en la instancia en la que no está el PagoBean que se creó con la primera petición.
 
 \section{Ejercicio9}
 \begin{mdframed}
